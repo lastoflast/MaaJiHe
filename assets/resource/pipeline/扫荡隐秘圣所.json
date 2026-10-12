@@ -1,0 +1,207 @@
+{
+    "$__mpe_config_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791545939354,
+            "isModifiedExternally": false,
+            "isDeleted": true,
+            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡隐秘圣所.json",
+            "savedViewport": {
+                "x": -1837,
+                "y": 201,
+                "zoom": 0.94
+            },
+            "filename": "扫荡隐秘圣所",
+            "version": "v2.0.1"
+        }
+    },
+    "$__mpe_external_去竞技场_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3182,
+                "y": 243
+            }
+        }
+    },
+    "$__mpe_external_退出界面_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4438,
+                "y": 592
+            }
+        }
+    },
+    "场外识别券数量_进入隐秘圣所前": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技券数量/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]去竞技场"
+        ],
+        "on_error": [
+            "点击冒险_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2927,
+                "y": 244
+            }
+        }
+    },
+    "扫荡隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "扫荡.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]确认扫荡_隐秘圣所"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3937,
+                "y": 343
+            }
+        }
+    },
+    "点击冒险_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "冒险.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "进入隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3178,
+                "y": 341
+            }
+        }
+    },
+    "点击知道了": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "知道了.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "timeout": 2000,
+        "next": [
+            "扫荡隐秘圣所"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3680,
+                "y": 342
+            }
+        }
+    },
+    "确认扫荡_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励两次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4190,
+                "y": 342
+            }
+        }
+    },
+    "进入隐秘圣所": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "隐秘圣所"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "timeout": 2000,
+        "next": [
+            "点击知道了"
+        ],
+        "on_error": [
+            "扫荡隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3428,
+                "y": 339
+            }
+        }
+    },
+    "$__mpe_external_领取奖励两次_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4441,
+                "y": 343
+            }
+        }
+    },
+    "$__mpe_sticker_便签_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4182,
+                "y": 625
+            },
+            "content": "这里退出并提示用户手动操作",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    }
+}

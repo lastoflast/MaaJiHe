@@ -1,0 +1,348 @@
+{
+    "$__mpe_config_黑暗之门自动化": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791778626382,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\黑暗之门自动化.json",
+            "savedViewport": {
+                "x": -1925,
+                "y": 29,
+                "zoom": 1
+            },
+            "filename": "黑暗之门自动化",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_退出界面_黑暗之门自动化": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3970,
+                "y": 911
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_黑暗之门自动化": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3966,
+                "y": 626
+            }
+        }
+    },
+    "$__mpe_sticker_便签_黑暗之门自动化": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2705,
+                "y": 163
+            },
+            "content": "只支持技能缓慢愈合 提醒军需官升级",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "一键上阵_黑暗之门": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键上阵.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "开始挑战_小"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2436,
+                "y": 621
+            }
+        }
+    },
+    "延迟1秒": {
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "点技能"
+        ],
+        "on_error": [
+            "点到金币处理",
+            "确定结束_黑暗之门"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2943,
+                "y": 358
+            }
+        }
+    },
+    "开始挑战_大": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始挑战黑暗之门.png"
+                ],
+                "threshold": [
+                    0.65
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "一键上阵_黑暗之门"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2437,
+                "y": 356
+            }
+        }
+    },
+    "开始挑战_小": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始挑战.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "确认_橙_副本1"
+        ],
+        "on_error": [
+            "点技能"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2436,
+                "y": 853
+            }
+        }
+    },
+    "点击冒险_黑暗之门": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "冒险.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "进入黑暗之门"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1934,
+                "y": 357
+            }
+        }
+    },
+    "点到金币处理": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "金币"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    375,
+                    1200,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "确定结束_黑暗之门"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2946,
+                "y": 663
+            }
+        }
+    },
+    "点技能": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    630,
+                    137,
+                    249
+                ],
+                "template": [
+                    "技能已满_绿色遮罩.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.6
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "延迟1秒"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2698,
+                "y": 358
+            }
+        }
+    },
+    "确定结束_黑暗之门": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ],
+                "threshold": [
+                    0.5
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "默认扫荡"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3202,
+                "y": 623
+            }
+        }
+    },
+    "确认_橙_副本1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点技能"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2691,
+                "y": 848
+            }
+        }
+    },
+    "确认扫荡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3712,
+                "y": 625
+            }
+        }
+    },
+    "进入黑暗之门": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "黑暗之门"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "开始挑战_大"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2184,
+                "y": 356
+            }
+        }
+    },
+    "默认扫荡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "扫荡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "确认扫荡"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3454,
+                "y": 623
+            }
+        }
+    }
+}

@@ -1,0 +1,205 @@
+{
+    "$__mpe_config_使用兑换码": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791803525142,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\使用兑换码.json",
+            "savedViewport": {
+                "x": -654,
+                "y": 564,
+                "zoom": 0.99
+            },
+            "filename": "使用兑换码",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗两次_使用兑换码": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1849,
+                "y": 109
+            }
+        }
+    },
+    "$__mpe_external_领取奖励两次_使用兑换码": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1851,
+                "y": 29
+            }
+        }
+    },
+    "兑换奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    187,
+                    671,
+                    320,
+                    160
+                ],
+                "expected": [
+                    "兑换"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励两次",
+            "关闭弹窗两次"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1590,
+                "y": 29
+            }
+        }
+    },
+    "兑换码": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "兑换码.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击请输入兑换码"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 550,
+                "y": 31
+            }
+        }
+    },
+    "点击菜单_兑换码": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "菜单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击设置"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 30,
+                "y": 30
+            }
+        }
+    },
+    "点击设置": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "设置.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "兑换码"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 31
+            }
+        }
+    },
+    "确认兑换码": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确定",
+                    "完成"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "兑换奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1330,
+                "y": 30
+            }
+        }
+    },
+    "点击请输入兑换码": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "请输入兑换码.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "输入兑换码"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 810,
+                "y": 30
+            }
+        }
+    },
+    "输入兑换码": {
+        "action": {
+            "type": "InputText",
+            "param": {
+                "input_text": ""
+            }
+        },
+        "next": [
+            "确认兑换码"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1070,
+                "y": 30
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_使用兑换码": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1852,
+                "y": 217
+            }
+        }
+    }
+}

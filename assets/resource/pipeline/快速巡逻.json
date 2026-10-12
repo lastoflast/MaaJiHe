@@ -1,0 +1,144 @@
+{
+    "$__mpe_config_快速巡逻": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791698962274,
+            "isModifiedExternally": false,
+            "isDeleted": true,
+            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速巡逻.json",
+            "savedViewport": {
+                "x": -2263,
+                "y": -524,
+                "zoom": 1.5
+            },
+            "filename": "快速巡逻",
+            "version": "v2.0.1"
+        }
+    },
+    "$__mpe_external_关闭弹窗两次_快速巡逻": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2254,
+                "y": 989
+            }
+        }
+    },
+    "$__mpe_external_去竞技场_快速巡逻": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1755,
+                "y": 516
+            }
+        }
+    },
+    "$__mpe_external_领取奖励两次_快速巡逻": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2497,
+                "y": 612
+            }
+        }
+    },
+    "场外识别券数量_快速巡逻前": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技券数量/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]去竞技场"
+        ],
+        "on_error": [
+            "点击巡逻_副本2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1505,
+                "y": 514
+            }
+        }
+    },
+    "快速巡逻": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "快速巡逻.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取快速巡逻奖励"
+        ],
+        "on_error": [
+            "关闭弹窗两次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1996,
+                "y": 610
+            }
+        }
+    },
+    "点击巡逻_副本2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "巡逻图标/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "快速巡逻"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1752,
+                "y": 610
+            }
+        }
+    },
+    "领取快速巡逻奖励": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "快速巡逻/"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励两次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2252,
+                "y": 610
+            }
+        }
+    }
+}

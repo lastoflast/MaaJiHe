@@ -1,0 +1,219 @@
+{
+    "$__mpe_config_自动祈愿": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791796913714,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\自动祈愿.json",
+            "savedViewport": {
+                "x": -4246,
+                "y": -456,
+                "zoom": 0.63
+            },
+            "filename": "自动祈愿",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_确认_橙_自动祈愿": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7827,
+                "y": 1411
+            }
+        }
+    },
+    "$__mpe_external_退出界面_自动祈愿": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7570,
+                "y": 1791
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_自动祈愿": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8089,
+                "y": 1570
+            }
+        }
+    },
+    "$__mpe_sticker_便签_自动祈愿": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7583,
+                "y": 1244
+            },
+            "content": "填入几轮改为max_hit",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "中继节点_祈愿": {
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]开始祈愿"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7309,
+                "y": 1410
+            }
+        }
+    },
+    "停止祈愿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "停止祈愿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7831,
+                "y": 1511
+            }
+        }
+    },
+    "勾选自动_祈愿": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "自动"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "中继节点_祈愿"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7051,
+                "y": 1709
+            }
+        }
+    },
+    "开始祈愿": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "祈愿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 3000,
+            "target": [
+                30,
+                288,
+                660,
+                400
+            ],
+            "threshold": 0.95,
+            "method": 5
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]确认_橙",
+            "停止祈愿",
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7569,
+                "y": 1411
+            }
+        }
+    },
+    "检查自动_祈愿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "勾选自动.png"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "勾选自动_祈愿"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7050,
+                "y": 1408
+            }
+        }
+    },
+    "点击招募_祈愿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "招募.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "点击神器_祈愿"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6526,
+                "y": 1407
+            }
+        }
+    },
+    "点击神器_祈愿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "神器.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "检查自动_祈愿",
+            "中继节点_祈愿"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6790,
+                "y": 1410
+            }
+        }
+    }
+}

@@ -1,0 +1,245 @@
+{
+    "$__mpe_config_战队大厅升级荣誉": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791391392439,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战队大厅升级荣誉.json",
+            "savedViewport": {
+                "x": -1838,
+                "y": 11,
+                "zoom": 0.94
+            },
+            "filename": "战队大厅升级荣誉",
+            "version": "v2.0.1"
+        }
+    },
+    "$__mpe_external_退出界面_战队大厅升级荣誉": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3958,
+                "y": 885
+            }
+        }
+    },
+    "升级3次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "升1级.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "timeout": 2000,
+        "next": [
+            "白银勋章不足"
+        ],
+        "on_error": [
+            "识别白银勋章数量"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3426,
+                "y": 362
+            }
+        }
+    },
+    "提升3秒": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "提升.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 3000
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "白银勋章不足"
+        ],
+        "on_error": [
+            "识别白银勋章数量"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3689,
+                "y": 488
+            }
+        }
+    },
+    "点击大厅": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "大厅.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "识别白银勋章数量"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2624,
+                "y": 358
+            }
+        }
+    },
+    "点击菜单_大厅": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "菜单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击大厅"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2364,
+                "y": 358
+            }
+        }
+    },
+    "白银勋章不足": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "白银勋章不足"
+                ]
+            }
+        },
+        "next": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3955,
+                "y": 364
+            }
+        }
+    },
+    "识别白银勋章数量": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "0章.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "inverse": true,
+        "timeout": 2000,
+        "next": [
+            "识别黄金勋章状态"
+        ],
+        "on_error": [
+            "进阶1次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2887,
+                "y": 361
+            }
+        }
+    },
+    "进阶1次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进阶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "focus": "",
+        "next": [
+            "黄金勋章不足"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2891,
+                "y": 830
+            }
+        }
+    },
+    "黄金勋章不足": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "黄金勋章不足"
+                ]
+            }
+        },
+        "next": [
+            "退出界面"
+        ],
+        "on_error": [
+            "识别白银勋章数量"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3148,
+                "y": 834
+            }
+        }
+    },
+    "识别黄金勋章状态": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "黄金勋章.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "inverse": true,
+        "timeout": 2000,
+        "next": [
+            "升级3次",
+            "提升3秒"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3153,
+                "y": 358
+            }
+        }
+    }
+}

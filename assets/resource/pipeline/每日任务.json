@@ -1,0 +1,136 @@
+{
+    "$__mpe_config_每日任务": {
+        "$__mpe_code": {
+            "prefix": "",
+            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\每日任务.json",
+            "lastSyncTime": 1791710438288,
+            "coordinateMode": "absolute-v1",
+            "savedViewport": {
+                "x": -9313,
+                "y": -1320,
+                "zoom": 1.5
+            },
+            "filename": "每日任务",
+            "version": "v2.0.1"
+        }
+    },
+    "点击菜单_任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "菜单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "点击任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6832,
+                "y": 1150
+            }
+        }
+    },
+    "点击任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "任务.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "领取每日任务奖励",
+            "领取宝箱_每日任务",
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7091,
+                "y": 1151
+            }
+        }
+    },
+    "领取宝箱_每日任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "任务宝箱.png"
+                ],
+                "threshold": [
+                    0.6
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励两次"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7611,
+                "y": 1150
+            }
+        }
+    },
+    "$__mpe_external_领取奖励两次_每日任务": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7872,
+                "y": 1151
+            }
+        }
+    },
+    "领取每日任务奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "领取.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取宝箱_每日任务"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7351,
+                "y": 1151
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗_每日任务": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7872,
+                "y": 1431
+            }
+        }
+    }
+}

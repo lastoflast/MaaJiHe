@@ -1,0 +1,138 @@
+{
+    "$__mpe_config_领取巡逻奖励": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791807512121,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\领取巡逻奖励.json",
+            "savedViewport": {
+                "x": -1021,
+                "y": 25,
+                "zoom": 0.99
+            },
+            "filename": "领取巡逻奖励",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_领取巡逻奖励": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2416,
+                "y": 686
+            }
+        }
+    },
+    "$__mpe_external_去竞技场_领取巡逻奖励": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1666,
+                "y": 429
+            }
+        }
+    },
+    "$__mpe_external_领取奖励两次_领取巡逻奖励": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2166,
+                "y": 530
+            }
+        }
+    },
+    "场外识别券数量_领取巡逻奖励前": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技券数量/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]去竞技场"
+        ],
+        "on_error": [
+            "点击巡逻"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1407,
+                "y": 431
+            }
+        }
+    },
+    "没有可领取的巡逻奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "没有可领取的奖励.png"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2164,
+                "y": 609
+            }
+        }
+    },
+    "点击巡逻": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "巡逻图标/"
+                ],
+                "threshold": [
+                    0.65
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取全部巡逻奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1664,
+                "y": 528
+            }
+        }
+    },
+    "领取全部巡逻奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "领取全部.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励两次",
+            "没有可领取的巡逻奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1914,
+                "y": 529
+            }
+        }
+    }
+}

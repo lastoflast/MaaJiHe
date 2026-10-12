@@ -1,0 +1,185 @@
+{
+    "$__mpe_config_浮空秘境（礼包）": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791804809172,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\浮空秘境（礼包）.json",
+            "savedViewport": {
+                "x": -6804,
+                "y": -865,
+                "zoom": 1.25
+            },
+            "filename": "浮空秘境（礼包）",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗并准备退出界面_浮空秘境（礼包）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7002,
+                "y": 1342
+            }
+        }
+    },
+    "$__mpe_external_领取免费礼包钻石_浮空秘境（礼包）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7000,
+                "y": 1259
+            }
+        }
+    },
+    "$__mpe_external_领取奖励一次_浮空秘境（礼包）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7001,
+                "y": 1177
+            }
+        }
+    },
+    "$__mpe_sticker_便签_浮空秘境（礼包）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5981,
+                "y": 916
+            },
+            "content": "需修改逻辑 参考部落争霸",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "上滑_浮空秘境": {
+        "max_hit": 1,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    375,
+                    580,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        375,
+                        570,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "timeout": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 6489,
+                "y": 1090
+            }
+        }
+    },
+    "切换礼包以防点到福泽": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "礼包"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6231,
+                "y": 1092
+            }
+        }
+    },
+    "点击礼包_浮空秘境": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "礼包_部落争霸.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]切换礼包以防点到福泽",
+            "[JumpBack]上滑_浮空秘境",
+            "[JumpBack]购买体力药1次",
+            "[JumpBack]领取免费礼包钻石",
+            "关闭弹窗并准备退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5972,
+                "y": 1090
+            }
+        }
+    },
+    "购买体力药1次": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "购买体力药.png"
+                ],
+                "threshold": [
+                    0.85
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励一次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6750,
+                "y": 1089
+            }
+        }
+    },
+    "进入浮空秘境": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "浮空秘境.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击礼包_浮空秘境"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5722,
+                "y": 1087
+            }
+        }
+    }
+}

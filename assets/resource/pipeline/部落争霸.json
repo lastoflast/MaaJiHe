@@ -1,0 +1,443 @@
+{
+    "$__mpe_config_部落争霸": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791807931892,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\部落争霸.json",
+            "savedViewport": {
+                "x": -1905,
+                "y": 234,
+                "zoom": 0.6
+            },
+            "filename": "部落争霸",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4385,
+                "y": 1476
+            },
+            "extra_positions": [
+                {
+                    "x": 4319,
+                    "y": 769
+                }
+            ]
+        }
+    },
+    "$__mpe_external_退出界面_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4385,
+                "y": 1542
+            },
+            "extra_positions": [
+                {
+                    "x": 4383,
+                    "y": 1608
+                },
+                {
+                    "x": 4791,
+                    "y": 11
+                }
+            ]
+        }
+    },
+    "$__mpe_external_领取免费礼包钻石_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3950,
+                "y": 709
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5051,
+                "y": 371
+            }
+        }
+    },
+    "$__mpe_external_领取奖励一次_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4210,
+                "y": 451
+            }
+        }
+    },
+    "$__mpe_sticker_便签_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4601,
+                "y": 1552
+            },
+            "content": "左边三个存疑",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "今日不再提示_部落争霸": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "今日不再提示.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "确认_橙_部落争霸"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4383,
+                "y": 1213
+            }
+        }
+    },
+    "免费捐献": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "捐献.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励",
+            "捐献剩余次数不足"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4790,
+                "y": 370
+            }
+        }
+    },
+    "攻击部落": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "攻击"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励_部落争霸"
+        ],
+        "on_error": [
+            "消耗1个攻城令",
+            "消耗2个攻城令",
+            "攻击部落"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3869,
+                "y": 1008
+            }
+        }
+    },
+    "消耗1个攻城令": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    77,
+                    477,
+                    567,
+                    240
+                ],
+                "expected": [
+                    "消耗1个攻城令"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "今日不再提示_部落争霸"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4123,
+                "y": 1213
+            }
+        }
+    },
+    "消耗2个攻城令": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    77,
+                    477,
+                    567,
+                    240
+                ],
+                "expected": [
+                    "消耗2个攻城令"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]关闭弹窗",
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4122,
+                "y": 1441
+            }
+        }
+    },
+    "点击建设": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落建设.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]免费捐献"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4531,
+                "y": 370
+            }
+        }
+    },
+    "点击礼包_部落争霸": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "礼包_部落争霸.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]购买攻城令",
+            "领取免费礼包钻石"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3690,
+                "y": 370
+            }
+        }
+    },
+    "确认_橙_部落争霸": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "timeout": 2000,
+        "next": [
+            "领取奖励_部落争霸"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4647,
+                "y": 1213
+            }
+        }
+    },
+    "购买攻城令": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "购买攻城令.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励一次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3950,
+                "y": 370
+            }
+        }
+    },
+    "领取奖励_部落争霸": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "攻击部落"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4127,
+                "y": 1008
+            }
+        }
+    },
+    "进入部落争霸": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落争霸.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "防弹窗_部落争霸"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3690,
+                "y": 11
+            }
+        }
+    },
+    "退出部落争霸": {
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]退出界面"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4531,
+                "y": 10
+            }
+        }
+    },
+    "防弹窗_部落争霸": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "备战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "repeat_delay": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 3951,
+                "y": 11
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4791,
+                "y": 150
+            }
+        }
+    },
+    "捐献剩余次数不足": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "剩余次数不足.png"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]关闭弹窗"
+        ],
+        "on_error": [
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5050,
+                "y": 451
+            }
+        }
+    },
+    "$__mpe_external_停止当前任务_部落争霸": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5310,
+                "y": 640
+            }
+        }
+    }
+}

@@ -1,0 +1,282 @@
+{
+    "$__mpe_config_新建Pipeline3": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791797311370,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡试炼之地.json",
+            "savedViewport": {
+                "x": -3944,
+                "y": -953,
+                "zoom": 1.5
+            },
+            "filename": "新建Pipeline3",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_准备扫荡_新建Pipeline3": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3379,
+                "y": 1397
+            }
+        }
+    },
+    "$__mpe_external_去竞技场_新建Pipeline3": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3636,
+                "y": 1001
+            }
+        }
+    },
+    "$__mpe_external_退出界面_新建Pipeline3": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3028,
+                "y": 2143
+            }
+        }
+    },
+    "上滑_试炼之地": {
+        "max_hit": 1,
+        "pre_delay": 200,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    374,
+                    891,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        374,
+                        572,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "post_delay": 200,
+        "$__mpe_code": {
+            "position": {
+                "x": 2756,
+                "y": 1628
+            }
+        }
+    },
+    "已达上限_试炼之地": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "去竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3373,
+                "y": 957
+            }
+        }
+    },
+    "点击冒险_试炼之地": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "冒险.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "进入试炼之地"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2511,
+                "y": 613
+            }
+        }
+    },
+    "进入_宝石矿洞": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "宝石矿洞"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "已达上限_试炼之地"
+        ],
+        "on_error": [
+            "准备扫荡"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3022,
+                "y": 1836
+            }
+        }
+    },
+    "进入_月光神殿": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "月光神殿"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "已达上限_试炼之地"
+        ],
+        "on_error": [
+            "准备扫荡"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3022,
+                "y": 1530
+            }
+        }
+    },
+    "进入_神秘森林": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "神秘森林"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "已达上限_试炼之地"
+        ],
+        "on_error": [
+            "准备扫荡"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3021,
+                "y": 1223
+            }
+        }
+    },
+    "进入废弃矿山": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "废弃矿山"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "已达上限_试炼之地"
+        ],
+        "on_error": [
+            "准备扫荡"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3022,
+                "y": 613
+            }
+        }
+    },
+    "进入试炼之地": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "试炼之地"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]进入废弃矿山",
+            "[JumpBack]进入远古战场",
+            "[JumpBack]进入_神秘森林",
+            "[JumpBack]进入_月光神殿",
+            "[JumpBack]上滑_试炼之地",
+            "[JumpBack]进入_宝石矿洞",
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2767,
+                "y": 614
+            }
+        }
+    },
+    "进入远古战场": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "远古战场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "已达上限_试炼之地"
+        ],
+        "on_error": [
+            "准备扫荡"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3021,
+                "y": 919
+            }
+        }
+    }
+}

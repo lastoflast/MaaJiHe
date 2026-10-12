@@ -1,0 +1,271 @@
+{
+    "$__mpe_config_挑战主线（仅一关）": {
+        "$__mpe_code": {
+            "prefix": "",
+            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\挑战主线（仅一关）.json",
+            "lastSyncTime": 1791715095966,
+            "coordinateMode": "absolute-v1",
+            "savedViewport": {
+                "x": -3003,
+                "y": -645,
+                "zoom": 1.59
+            },
+            "filename": "挑战主线（仅一关）",
+            "version": "v2.0.1"
+        }
+    },
+    "进入下一关": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    {
+                        "recognition": {
+                            "type": "TemplateMatch",
+                            "param": {
+                                "template": [
+                                    "下一关.png"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "OCR",
+                            "param": {
+                                "expected": [
+                                    "下一关"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3349,
+                "y": 750
+            }
+        }
+    },
+    "点击主线": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "主线/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "一键上阵_主线"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2309,
+                "y": 619
+            }
+        }
+    },
+    "等待5秒_主线": {
+        "max_hit": 30,
+        "pre_delay": 2500,
+        "post_delay": 2500,
+        "timeout": 2000,
+        "next": [
+            "继续",
+            "领取奖励_挑战主线",
+            "进入下一关",
+            "点击任意关闭两次",
+            "等待5秒_主线"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2830,
+                "y": 490
+            }
+        }
+    },
+    "$__mpe_external_点击任意关闭两次_挑战主线（仅一关）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3091,
+                "y": 950
+            }
+        }
+    },
+    "$__mpe_external_退出界面_挑战主线（仅一关）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3611,
+                "y": 791
+            }
+        }
+    },
+    "继续": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "继续.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]下一队"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3090,
+                "y": 491
+            }
+        }
+    },
+    "一键上阵_主线": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键上阵.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "下一队",
+        "next": [
+            "开始战斗_主线"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2571,
+                "y": 491
+            }
+        }
+    },
+    "$__mpe_anchor_下一队_挑战主线（仅一关）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3351,
+                "y": 490
+            }
+        }
+    },
+    "开始战斗_主线": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始战斗.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "等待5秒_主线"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2569,
+                "y": 809
+            }
+        }
+    },
+    "领取奖励_挑战主线": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "进入下一关"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3090,
+                "y": 750
+            }
+        }
+    },
+    "场外识别券数量_挑战主线前": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技券数量/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]去竞技场"
+        ],
+        "on_error": [
+            "点击主线",
+            "下一章"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2051,
+                "y": 489
+            }
+        }
+    },
+    "$__mpe_external_去竞技场_挑战主线（仅一关）": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2311,
+                "y": 490
+            }
+        }
+    },
+    "下一章": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "下一章.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 5000,
+        "next": [
+            "点击主线"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2310,
+                "y": 871
+            }
+        }
+    }
+}

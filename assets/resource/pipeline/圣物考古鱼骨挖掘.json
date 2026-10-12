@@ -1,0 +1,235 @@
+{
+    "$__mpe_config_圣物考古鱼骨挖掘": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791551203462,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\圣物考古鱼骨挖掘.json",
+            "savedViewport": {
+                "x": -11267,
+                "y": -887,
+                "zoom": 1.5
+            },
+            "filename": "圣物考古鱼骨挖掘",
+            "version": "v2.0.1"
+        }
+    },
+    "$__mpe_external_停止当前任务_圣物考古鱼骨挖掘": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8304,
+                "y": 1374
+            }
+        }
+    },
+    "$__mpe_sticker_便签_圣物考古鱼骨挖掘": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8305,
+                "y": 1465
+            },
+            "content": "提醒用户手动挖掘后切换地图",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "不是土块或石块": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "土石块"
+                ]
+            }
+        },
+        "inverse": true,
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9003,
+                "y": 918
+            }
+        }
+    },
+    "是土块_左": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    110,
+                    1,
+                    160,
+                    1279
+                ],
+                "template": [
+                    "土石块/土块.png"
+                ],
+                "order_by": "Vertical",
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8116,
+                "y": 614
+            }
+        }
+    },
+    "是石块_左": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    110,
+                    1,
+                    160,
+                    1279
+                ],
+                "template": [
+                    "土石块/石块.png"
+                ],
+                "order_by": "Vertical",
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 8386,
+                "y": 612
+            }
+        }
+    },
+    "本章地图挖掘完毕": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "挖掘完毕提示.png"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8047,
+                "y": 1369
+            }
+        }
+    },
+    "开始自动鱼骨挖掘": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "没铲子啦.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "inverse": true,
+        "timeout": 2000,
+        "next": [
+            "是土块_左",
+            "是石块_左",
+            "是土块_右",
+            "是石块_右"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7784,
+                "y": 835
+            }
+        }
+    },
+    "新建节点280": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    ""
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8811,
+                "y": 927
+            }
+        }
+    },
+    "是土块_右": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    450,
+                    1,
+                    160,
+                    1279
+                ],
+                "template": [
+                    "土石块/土块.png"
+                ],
+                "order_by": "Vertical",
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8118,
+                "y": 990
+            }
+        }
+    },
+    "是石块_右": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    450,
+                    1,
+                    160,
+                    1279
+                ],
+                "template": [
+                    "土石块/石块.png"
+                ],
+                "order_by": "Vertical",
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 8382,
+                "y": 966
+            }
+        }
+    }
+}

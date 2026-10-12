@@ -1,0 +1,1012 @@
+{
+    "$__mpe_config_收菜助力一条龙": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791801786902,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\收菜助力一条龙.json",
+            "savedViewport": {
+                "x": -7922,
+                "y": -2464,
+                "zoom": 0.94
+            },
+            "filename": "收菜助力一条龙",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10681,
+                "y": 2556
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗并准备退出界面_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10680,
+                "y": 2445
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10690,
+                "y": 2669
+            }
+        }
+    },
+    "$__mpe_external_确认_橙_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 11173,
+                "y": 1525
+            }
+        }
+    },
+    "$__mpe_external_退出界面_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10676,
+                "y": 2145
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10677,
+                "y": 2342
+            }
+        }
+    },
+    "$__mpe_external_领取奖励一次_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10678,
+                "y": 2240
+            }
+        }
+    },
+    "$__mpe_sticker_便签_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10251,
+                "y": 2261
+            },
+            "content": "提醒用户选择下轮奖励",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_布尔参数（可勾选）？_收菜助力一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10658,
+                "y": 1285
+            },
+            "content": "仅神器周启用自动祈愿",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "仅助力": {
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]进入部落_助力",
+            "[JumpBack]点击菜单_助力"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8620,
+                "y": 3831
+            }
+        }
+    },
+    "免费领取_招募": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "免费领取.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 4000,
+        "timeout": 2000,
+        "next": [
+            "确定招募结果",
+            "获得新英雄"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9709,
+                "y": 1450
+            }
+        }
+    },
+    "免费领取_神器": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "免费领取.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]确认_橙"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10913,
+                "y": 1450
+            }
+        }
+    },
+    "取消自动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "自动"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "免费领取_神器"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10649,
+                "y": 1692
+            }
+        }
+    },
+    "收菜助力": {
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击招募_收菜",
+            "[JumpBack]点击商店",
+            "[JumpBack]点击好友集结",
+            "[JumpBack]进入部落_收菜助力",
+            "[JumpBack]点击菜单_收菜助力"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8617,
+                "y": 2488
+            }
+        }
+    },
+    "杂货店免费宝箱": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "免费_小.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取杂货店免费宝箱"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9449,
+                "y": 3390
+            }
+        }
+    },
+    "检查自动_神器祈愿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "勾选自动.png"
+                ]
+            }
+        },
+        "next": [
+            "取消自动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10649,
+                "y": 1451
+            }
+        }
+    },
+    "点击一键帮助": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键帮助.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "关闭弹窗并准备退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10730,
+                "y": 2890
+            }
+        }
+    },
+    "点击一键收送": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键收送.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励一次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9450,
+                "y": 3049
+            }
+        }
+    },
+    "点击先祖招募": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "先祖招募"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "免费领取_招募"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9449,
+                "y": 1451
+            }
+        }
+    },
+    "点击兑换": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "兑换"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9970,
+                "y": 2260
+            }
+        }
+    },
+    "点击商店": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "商店.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击领取_商店",
+            "[JumpBack]点击英雄礼包",
+            "关闭弹窗并准备退出界面"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8926,
+                "y": 1878
+            }
+        }
+    },
+    "点击好友": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "好友.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]点击一键收送",
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9189,
+                "y": 3048
+            }
+        }
+    },
+    "点击好友集结": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "好友集结.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 200,
+        "next": [
+            "点击祈福神坛"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8930,
+                "y": 2254
+            }
+        }
+    },
+    "点击招募_收菜": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "招募.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击普通招募",
+            "[JumpBack]点击先祖招募",
+            "点击神器_收菜"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8931,
+                "y": 1452
+            }
+        }
+    },
+    "点击普通招募": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "普通招募"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "免费领取_招募"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9188,
+                "y": 1450
+            }
+        }
+    },
+    "点击杂货店": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "杂货店.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "杂货店免费宝箱"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9190,
+                "y": 3391
+            }
+        }
+    },
+    "点击求助_短": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "求助_短.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "点击求助_长",
+            "点击一键帮助"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10211,
+                "y": 2891
+            }
+        }
+    },
+    "点击求助_长": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "求助_长.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击一键帮助"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10470,
+                "y": 2891
+            }
+        }
+    },
+    "点击祈福神坛": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "祈福神坛"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击自行祈福",
+            "[JumpBack]领取宝箱_祈福阶段",
+            "[JumpBack]点击兑换",
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9185,
+                "y": 2254
+            }
+        }
+    },
+    "点击神器_收菜": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "神器.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "检查自动_神器祈愿",
+            "免费领取_神器"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10391,
+                "y": 1451
+            }
+        }
+    },
+    "点击空白处_部落签到领奖后": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    360,
+                    1250,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "点击聊天_部落"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9950,
+                "y": 2627
+            }
+        }
+    },
+    "点击签到_部落": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落签到.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "点击签到领奖_部落"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9183,
+                "y": 2629
+            }
+        }
+    },
+    "点击签到领奖_部落": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落签到领奖.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9439,
+                "y": 2629
+            }
+        }
+    },
+    "点击聊天_部落": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落聊天.png"
+                ],
+                "threshold": [
+                    0.65
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励_部落助力"
+        ],
+        "on_error": [
+            "点击求助_短"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9692,
+                "y": 2887
+            }
+        }
+    },
+    "点击自行祈福": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "自行祈福"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9448,
+                "y": 2255
+            }
+        }
+    },
+    "点击英雄礼包": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "英雄礼包.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击选择英雄"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9703,
+                "y": 1871
+            }
+        }
+    },
+    "点击菜单_助力": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "菜单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "点击好友"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9127,
+                "y": 3831
+            }
+        }
+    },
+    "点击菜单_收菜助力": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "菜单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "点击好友",
+            "点击杂货店"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8928,
+                "y": 3047
+            }
+        }
+    },
+    "点击选择英雄": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "选择英雄"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励一次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9965,
+                "y": 1868
+            }
+        }
+    },
+    "点击领取_商店": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9178,
+                "y": 1878
+            }
+        }
+    },
+    "确定招募结果": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_红.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9971,
+                "y": 1449
+            }
+        }
+    },
+    "获得新英雄": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "太棒了"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "确定招募结果"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9968,
+                "y": 1670
+            }
+        }
+    },
+    "进入部落_助力": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "点击聊天_部落"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8871,
+                "y": 3831
+            }
+        }
+    },
+    "进入部落_收菜助力": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击签到_部落",
+            "点击空白处_部落签到领奖后"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8928,
+                "y": 2630
+            }
+        }
+    },
+    "领取奖励_部落助力": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击求助_短"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9951,
+                "y": 2889
+            }
+        }
+    },
+    "领取宝箱_祈福阶段": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "祈福宝箱.png"
+                ],
+                "threshold": [
+                    0.65
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9710,
+                "y": 2256
+            }
+        }
+    },
+    "领取杂货店免费宝箱": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "免费_大.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9709,
+                "y": 3391
+            }
+        }
+    }
+}

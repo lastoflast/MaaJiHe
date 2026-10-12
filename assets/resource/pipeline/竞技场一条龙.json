@@ -1,0 +1,512 @@
+{
+    "$__mpe_config_竞技场一条龙": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1791735577396,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\竞技场一条龙.json",
+            "savedViewport": {
+                "x": -1306,
+                "y": -364,
+                "zoom": 1.5
+            },
+            "filename": "竞技场一条龙",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_anchor_挑战竞技场_竞技场一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2604,
+                "y": 289
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗_竞技场一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2078,
+                "y": 1158
+            }
+        }
+    },
+    "$__mpe_external_退出界面_竞技场一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1577,
+                "y": 907
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_竞技场一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1833,
+                "y": 588
+            }
+        }
+    },
+    "$__mpe_sticker_便签_竞技场一条龙": {
+        "$__mpe_code": {
+            "position": {
+                "x": 323,
+                "y": 842
+            },
+            "content": "阈值0.6/0.7？",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "一键上阵_竞技场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键上阵.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "开始战斗_竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2354,
+                "y": 588
+            }
+        }
+    },
+    "上滑_竞技场": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    374,
+                    891,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        374,
+                        572,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "点击碾压",
+            "点击手动挑战"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1833,
+                "y": 291
+            }
+        }
+    },
+    "关闭弹窗_副本a": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "关闭.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击竞技场奖励_周"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1566,
+                "y": 1196
+            }
+        }
+    },
+    "去竞技场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技场_文字.png"
+                ]
+            }
+        },
+        "anchor": "挑战竞技场",
+        "timeout": 2000,
+        "next": [
+            "场内识别券数量"
+        ],
+        "on_error": [
+            "[JumpBack]检查竞技场宝箱",
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1062,
+                "y": 294
+            }
+        }
+    },
+    "场内识别券数量": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "0券.png"
+                ],
+                "threshold": [
+                    0.92
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "挑战竞技场假人"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1319,
+                "y": 292
+            }
+        }
+    },
+    "场外识别券数量": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技券数量/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 210,
+                "y": 733
+            }
+        }
+    },
+    "开始战斗_竞技场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始战斗.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "等待5秒_竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2614,
+                "y": 588
+            }
+        }
+    },
+    "挑战竞技场假人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "挑战.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "上滑_竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1576,
+                "y": 290
+            }
+        }
+    },
+    "检查竞技场奖励": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技场奖励.png"
+                ]
+            }
+        },
+        "next": [
+            "点击竞技场奖励_日"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1058,
+                "y": 1006
+            }
+        }
+    },
+    "检查竞技场宝箱": {
+        "max_hit": 4,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技场已解锁宝箱.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1573,
+                "y": 584
+            }
+        }
+    },
+    "点击任意关闭_副本1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]挑战竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3125,
+                "y": 589
+            }
+        }
+    },
+    "点击手动挑战": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    420,
+                    1,
+                    297,
+                    1278
+                ],
+                "template": [
+                    "挑战竞技场.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "一键上阵_竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2090,
+                "y": 589
+            }
+        }
+    },
+    "点击碾压": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    420,
+                    1,
+                    297,
+                    1278
+                ],
+                "template": [
+                    "碾压.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取白银勋章"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2091,
+                "y": 290
+            }
+        }
+    },
+    "点击竞技场奖励_周": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "排名奖励"
+                ],
+                "order_by": "Horizontal",
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励",
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1826,
+                "y": 1007
+            }
+        }
+    },
+    "点击竞技场奖励_日": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "排名奖励"
+                ],
+                "order_by": "Horizontal",
+                "index": 1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励_副本a",
+            "关闭弹窗_副本a"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1313,
+                "y": 1005
+            }
+        }
+    },
+    "等待5秒_竞技场": {
+        "max_hit": 30,
+        "pre_delay": 2500,
+        "post_delay": 2500,
+        "timeout": 2000,
+        "next": [
+            "点击任意关闭_副本1",
+            "等待5秒_竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2872,
+                "y": 589
+            }
+        }
+    },
+    "进入竞技场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技场.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]检查竞技场奖励",
+            "去竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 738,
+                "y": 713
+            }
+        }
+    },
+    "领取奖励_副本a": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击竞技场奖励_周"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1565,
+                "y": 1007
+            }
+        }
+    },
+    "领取白银勋章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜获得"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[Anchor]挑战竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2350,
+                "y": 289
+            }
+        }
+    }
+}
