@@ -5,10 +5,10 @@
     // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
     "name": "MaaJiHe",
-    "description": "基于全新架构的 几何王国 小助手。图像技术 + 模拟控制，解放双手！由 MaaFramework 强力驱动！（大部分任务从主界面开始识别执行）",
+    "description": "基于全新架构的 几何王国 小助手。图像技术 + 模拟控制，解放双手！【大部分任务从主界面开始识别执行】",
     "contact": "QQ: 1974843952",
     "license": "MIT",
-    "welcome": "首次使用！欢迎使用 几何王国 小助手！（大部分任务从主界面开始识别执行）",
+    "welcome": "欢迎使用 几何王国 小助手！",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/lastoflast/MaaJiHe",
     "version": "1.0.0",
@@ -22,7 +22,7 @@
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                "window_regex": "Visual Studio",
+                "window_regex": ".*几何王国.*",
                 // 截图及控制方式，请根据项目实际情况修改
                 // 文档: https://maafw.xyz/docs/2.4-ControlMethods
                 "screencap": "PrintWindow", // 截图方式
@@ -61,17 +61,14 @@
     // },
     "task": [
         {
-            "name": "（模板）自定义识别与动作示例",
-            "entry": "FindSmallestNumber"
-        },
-        {
-            "name": "巡逻奖励",
+            "name": "巡逻",
             "entry": "场外识别券数量_领取巡逻奖励前",
             "group": [
                 "上午",
                 "下午"
             ],
-            "default_check": true
+            "default_check": true,
+            "description": "（未考虑到升级的情况）"
         },
         {
             "name": "收菜助力",
@@ -89,16 +86,19 @@
                 "工具"
             ],
             "default_check": true,
-            "description": "仅打一关。"
+            "description": "仅打一关。（未考虑到升级的情况）"
         },
         {
             "name": "快速巡逻",
             "entry": "场外识别券数量_快速巡逻前",
-            "description": "免费巡逻和50钻巡逻。",
+            "description": "默认免费+50钻巡逻。（未考虑到升级的情况）",
             "group": [
                 "上午"
             ],
-            "default_check": true
+            "default_check": true,
+            "option": [
+                "快速巡逻模式"
+            ]
         },
         {
             "name": "试炼之地",
@@ -156,7 +156,7 @@
             "default_check": true
         },
         {
-            "name": "清竞技场",
+            "name": "竞技场",
             "entry": "进入竞技场",
             "description": "自动碾压或挑战，领取排名奖励和宝箱。",
             "group": [
@@ -218,6 +218,15 @@
             "default_check": true
         },
         {
+            "name": "建设部落",
+            "entry": "点击建设",
+            "group": [
+                "部落争霸"
+            ],
+            "default_check": true,
+            "description": "与购买部落争霸礼包衔接暂时有bug"
+        },
+        {
             "name": "购买部落争霸礼包",
             "entry": "点击礼包_部落争霸",
             "group": [
@@ -228,15 +237,6 @@
             ],
             "default_check": true,
             "description": "与建设部落衔接暂时有bug"
-        },
-        {
-            "name": "建设部落",
-            "entry": "点击建设",
-            "group": [
-                "部落争霸"
-            ],
-            "default_check": true,
-            "description": "与购买部落争霸礼包衔接暂时有bug"
         },
         {
             "name": "退出部落争霸",
@@ -351,6 +351,45 @@
             ],
             "description": "购买3次或不购买。（默认购买）",
             "default_case": "Yes"
+        },
+        "快速巡逻模式": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "仅免费",
+                    "pipeline_override": {
+                        "领取快速巡逻奖励": {
+                            "template": [
+                                "快速巡逻/0钻.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "免费+50",
+                    "pipeline_override": {
+                        "领取快速巡逻奖励": {
+                            "template": [
+                                "快速巡逻/0钻.png",
+                                "快速巡逻/50钻.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "免费+50+100",
+                    "pipeline_override": {
+                        "领取快速巡逻奖励": {
+                            "template": [
+                                "快速巡逻/0钻.png",
+                                "快速巡逻/50钻.png",
+                                "快速巡逻/100钻.png"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "免费+50"
         }
     },
     "group": [
@@ -367,5 +406,5 @@
             "name": "部落争霸"
         }
     ],
-    "icon": "images/游戏图标.png"
+    "icon": "resource/image/几何王国.png"
 }

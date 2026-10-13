@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791735858465,
+            "lastSyncTime": 1791879162854,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\通用函数.json",
             "savedViewport": {
-                "x": -669,
-                "y": -740,
-                "zoom": 1.24
+                "x": -3213,
+                "y": -2594,
+                "zoom": 2.5
             },
             "filename": "通用函数",
             "version": "v2.1.0"
@@ -179,8 +179,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1723,
-                "y": 1229
+                "x": 1731,
+                "y": 1230
             }
         }
     },
@@ -196,8 +196,8 @@
         "inverse": true,
         "$__mpe_code": {
             "position": {
-                "x": 1722,
-                "y": 1383
+                "x": 1730,
+                "y": 1390
             }
         }
     },
@@ -222,26 +222,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 1470,
-                "y": 1232
-            }
-        }
-    },
-    "点击菜单": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "菜单.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 823,
-                "y": 1058
+                "y": 1230
             }
         }
     },

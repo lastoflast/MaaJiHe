@@ -1,43 +1,69 @@
 <!-- markdownlint-disable MD033 MD041 -->
-<p align="center">
-  <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/v1/icons/maa-logo_512x512.png" width="256" height="256" />
-</p>
 
-<div align="center">
+![](H:\Maa Projects\MaaJiHe\assets\resource\image\几何王国.png)
 
-# MaaPracticeBoilerplate
+
+# MaaJiHe
 
 </div>
 
-本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，开发者可基于此模板直接创建自己的 MaaXXX 项目。
+基于全新架构的 战双帕弥什 小助手。图像技术 + 模拟控制，解放双手！  
+由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
 
-> **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
-> 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
+## 免责声明
 
-## 即刻开始
+- 本资源 **开源** 且 **免费**
+- 本资源按“现状”提供，不附带任何形式的明示或暗示担保。使用者需自行承担所有风险。
+- 作者不对因使用本资源而导致的任何直接、间接或结果性损失承担责任。
+- 本资源为独立组件，其MIT许可证不传染，也不受与之集成的其他软件许可证的影响。
+- 基于本资源进行的任何商业行为均与原作者无关，使用者不得暗示任何官方关联或认可。
 
-**请不要直接克隆本仓库！你应该通过模板创建自己的项目！**  
+## 主要功能
 
-请阅读 [如何开发](./docs/zh_cn/develop/how_to_develop.md)。
+- 巡逻
+- 收菜助力
+- 主线一关
+- 快速巡逻
+- 试炼之地
+- 王座之塔
+- 隐秘圣所
+- 黑暗之门
+- 部落试炼
+- 每日任务
+- 竞技场
+- 大厅升级
+- 助力
+- 兑换码
+- 自动祈愿
 
-向本模板仓库提交改动前，请阅读 [PR 规范](./docs/zh_cn/develop/pull_request_guidelines.md)。
+## 注意事项
 
-## 生态共建
+- 安卓模拟器端：暂未测试（~~任意模拟器皆可,如果出现部分任务无法完成,请切换1280\*720(240DPI)~~）
+- 桌面端：需要使用管理员权限启动
+- 打开无法运行首先尝试安装运行库 <https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170>
+- 如有其他问题可以提交issue，反馈问题请附上日志文件 `debug/maa.log`，谢谢！
 
-MAA 正计划建设为一类项目，而非舟的单一软件。
+## 使用说明
 
-若您的项目依赖于 MaaFramework，我们欢迎您将它命名为 MaaXXX, MXA, MAX 等等。当然，这是许可而不是限制，您也可以自由选择其他与 MAA 无关的名字，完全取决于您自己的想法！
+下载地址：[https://github.com/lastoflast/MaaJiHe/releases](https://github.com/lastoflast/MaaJiHe/releases)
 
-同时，我们也非常欢迎您提出 PR，在 [社区项目列表](https://github.com/MaaXYZ/MaaFramework#%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE) 中添加上您的项目！
+### Windows
 
-## 常见问题
-
-请阅读 [常见问题](./docs/zh_cn/develop/faq.md)。
+- 对于绝大部分用户，请下载 `MaaJiHe-win-x86_64-vXXX.zip`
+- ~~若确定自己的电脑是 arm 架构，请下载 `MaaJiHe-win-aarch64-vXXX.zip`~~
+- 解压后运行 `几何王国小助手`即可
 
 ## 鸣谢
 
-本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
+### 开源库
 
-感谢以下开发者对本项目作出的贡献（下面链接改成你自己的项目地址）:
+- [MaaFramework](https://github.com/MaaXYZ/MaaFramework)
 
-[![Contributors](https://contrib.rocks/image?repo=MaaXYZ/MaaFramework&max=1000)](https://github.com/MaaXYZ/MaaFramework/graphs/contributors)
+  基于图像识别的自动化黑盒测试框架 | An automation black-box testing framework based on image recognition
+
+- [MaaPipelineEditor](https://github.com/kqcoxn/MaaPipelineEditor)
+
+  工作流式可视化的MaaFramework审阅与编辑工具 | A workflow-based visual review and editing tool for MaaFramework
+
+- [MFW-ChainFlow Assistant](https://github.com/overflow65537/MFW-PyQt6)
+  基于 PySide6 的 MaaFramework 前端 | A frontend based on PySide6 for MaaFramework

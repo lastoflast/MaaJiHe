@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791801786902,
+            "lastSyncTime": 1791811454129,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\收菜助力一条龙.json",
             "savedViewport": {
-                "x": -7922,
-                "y": -2464,
-                "zoom": 0.94
+                "x": -10958,
+                "y": -3321,
+                "zoom": 1.19
             },
             "filename": "收菜助力一条龙",
             "version": "v2.1.0"
@@ -387,7 +387,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]点击一键收送",
             "关闭弹窗"

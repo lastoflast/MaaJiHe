@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791698962274,
+            "lastSyncTime": 1791882095018,
             "isModifiedExternally": false,
-            "isDeleted": true,
-            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速巡逻.json",
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速巡逻.json",
             "savedViewport": {
-                "x": -2263,
-                "y": -524,
-                "zoom": 1.5
+                "x": -2676,
+                "y": -499,
+                "zoom": 1.57
             },
             "filename": "快速巡逻",
-            "version": "v2.0.1"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_external_关闭弹窗两次_快速巡逻": {
@@ -27,8 +27,8 @@
     "$__mpe_external_去竞技场_快速巡逻": {
         "$__mpe_code": {
             "position": {
-                "x": 1755,
-                "y": 516
+                "x": 1754,
+                "y": 515
             }
         }
     },
@@ -57,7 +57,7 @@
             "[JumpBack]去竞技场"
         ],
         "on_error": [
-            "点击巡逻_副本2"
+            "点击巡逻_快速巡逻"
         ],
         "$__mpe_code": {
             "position": {
@@ -87,12 +87,12 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1996,
+                "x": 2001,
                 "y": 610
             }
         }
     },
-    "点击巡逻_副本2": {
+    "点击巡逻_快速巡逻": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -115,15 +115,16 @@
         }
     },
     "领取快速巡逻奖励": {
-        "max_hit": 3,
+        "max_hit": 4,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "快速巡逻/"
+                    "快速巡逻/0钻.png",
+                    "快速巡逻/50钻.png"
                 ],
                 "threshold": [
-                    0.9
+                    0.875
                 ]
             }
         },

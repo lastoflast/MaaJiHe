@@ -3,24 +3,24 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791803525142,
+            "lastSyncTime": 1791879201175,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\使用兑换码.json",
             "savedViewport": {
-                "x": -654,
-                "y": 564,
-                "zoom": 0.99
+                "x": -3570,
+                "y": 231,
+                "zoom": 2.5
             },
             "filename": "使用兑换码",
             "version": "v2.1.0"
         }
     },
-    "$__mpe_external_关闭弹窗两次_使用兑换码": {
+    "$__mpe_external_关闭弹窗_使用兑换码": {
         "$__mpe_code": {
             "position": {
-                "x": 1849,
-                "y": 109
+                "x": 1851,
+                "y": 110
             }
         }
     },
@@ -53,7 +53,7 @@
         "timeout": 2000,
         "next": [
             "[JumpBack]领取奖励两次",
-            "关闭弹窗两次"
+            "[JumpBack]关闭弹窗"
         ],
         "on_error": [
             "啥也不做"
@@ -99,6 +99,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 500,
         "next": [
             "点击设置"
         ],
