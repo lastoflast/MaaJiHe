@@ -11,7 +11,7 @@
     "welcome": "欢迎使用 几何王国 小助手！",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/lastoflast/MaaJiHe",
-    "version": "1.0.0",
+    "version": "1.0.1",
     // Mirror酱为第三方分发服务，新项目默认关闭
     // 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
     // "mirrorchyan_rid": "MaaXXX",
@@ -42,13 +42,6 @@
             "name": "官服",
             "path": [
                 "./resource"
-            ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "./resource"
-                // "./resource_bilibili"
             ]
         }
     ],
@@ -133,7 +126,7 @@
         {
             "name": "黑暗之门",
             "entry": "点击冒险_黑暗之门",
-            "description": "只支持识别技能缓慢愈合，请自行升级军需官。（窗口运行时四周不要留太多黑边，可能会识别不准）",
+            "description": "请自行升级军需官。（网页端左右侧不要留黑边）",
             "group": [
                 "上午"
             ],
@@ -218,15 +211,6 @@
             "default_check": true
         },
         {
-            "name": "建设部落",
-            "entry": "点击建设",
-            "group": [
-                "部落争霸"
-            ],
-            "default_check": true,
-            "description": "与购买部落争霸礼包衔接暂时有bug"
-        },
-        {
             "name": "购买部落争霸礼包",
             "entry": "点击礼包_部落争霸",
             "group": [
@@ -235,8 +219,16 @@
             "option": [
                 "购买攻城令"
             ],
+            "default_check": true
+        },
+        {
+            "name": "建设部落",
+            "entry": "点击建设",
+            "group": [
+                "部落争霸"
+            ],
             "default_check": true,
-            "description": "与建设部落衔接暂时有bug"
+            "description": "默认免费捐赠5次。"
         },
         {
             "name": "退出部落争霸",
@@ -245,6 +237,17 @@
                 "部落争霸"
             ],
             "default_check": true
+        },
+        {
+            "name": "攻击部落",
+            "entry": "攻击部落",
+            "description": "需先选定好目标部落，默认攻击15次，不满足攻城令使用条件时停止攻击。",
+            "option": [
+                "使用攻城令"
+            ],
+            "group": [
+                "部落争霸"
+            ]
         }
     ],
     "option": {
@@ -356,7 +359,7 @@
             "type": "select",
             "cases": [
                 {
-                    "name": "仅免费",
+                    "name": "免费",
                     "pipeline_override": {
                         "领取快速巡逻奖励": {
                             "template": [
@@ -390,6 +393,42 @@
                 }
             ],
             "default_case": "免费+50"
+        },
+        "使用攻城令": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "不使用",
+                    "pipeline_override": {
+                        "消耗n个攻城令": {
+                            "expected": [
+                                "令城攻个0耗消"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1个",
+                    "pipeline_override": {
+                        "消耗n个攻城令": {
+                            "expected": [
+                                "消耗1个攻城令"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1~2个",
+                    "pipeline_override": {
+                        "消耗n个攻城令": {
+                            "expected": [
+                                "消耗1个攻城令",
+                                "消耗2个攻城令"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     },
     "group": [

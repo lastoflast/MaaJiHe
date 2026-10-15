@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791807512121,
+            "lastSyncTime": 1792040029269,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\领取巡逻奖励.json",
             "savedViewport": {
-                "x": -1021,
-                "y": 25,
-                "zoom": 0.99
+                "x": -1745,
+                "y": -340,
+                "zoom": 1.5
             },
             "filename": "领取巡逻奖励",
             "version": "v2.1.0"
@@ -92,15 +92,13 @@
             "param": {
                 "template": [
                     "巡逻图标/"
-                ],
-                "threshold": [
-                    0.65
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
+        "post_delay": 500,
         "next": [
             "领取全部巡逻奖励"
         ],

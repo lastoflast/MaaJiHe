@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791797301790,
+            "lastSyncTime": 1791958389378,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\王座之塔送死.json",
             "savedViewport": {
-                "x": -1184,
-                "y": 275,
+                "x": -1087,
+                "y": 147,
                 "zoom": 0.99
             },
             "filename": "王座之塔送死",
@@ -129,6 +129,9 @@
         "next": [
             "进入王座之塔"
         ],
+        "on_error": [
+            "关闭弹窗"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 1493,
@@ -210,6 +213,14 @@
             "position": {
                 "x": 1749,
                 "y": 221
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗_王座之塔送死": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1751,
+                "y": 510
             }
         }
     }

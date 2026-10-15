@@ -1,42 +1,50 @@
 {
-    "$__mpe_config_新建Pipeline3": {
+    "$__mpe_config_扫荡试炼之地": {
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791797311370,
+            "lastSyncTime": 1792039748059,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡试炼之地.json",
             "savedViewport": {
-                "x": -3944,
-                "y": -953,
-                "zoom": 1.5
+                "x": -684,
+                "y": -196,
+                "zoom": 0.63
             },
-            "filename": "新建Pipeline3",
+            "filename": "扫荡试炼之地",
             "version": "v2.1.0"
         }
     },
-    "$__mpe_external_准备扫荡_新建Pipeline3": {
+    "$__mpe_external_停止当前任务_扫荡试炼之地": {
         "$__mpe_code": {
             "position": {
-                "x": 3379,
-                "y": 1397
+                "x": 3771,
+                "y": 1170
             }
         }
     },
-    "$__mpe_external_去竞技场_新建Pipeline3": {
+    "$__mpe_external_准备扫荡_扫荡试炼之地": {
         "$__mpe_code": {
             "position": {
-                "x": 3636,
-                "y": 1001
+                "x": 3770,
+                "y": 930
             }
         }
     },
-    "$__mpe_external_退出界面_新建Pipeline3": {
+    "$__mpe_external_去竞技场_扫荡试炼之地": {
         "$__mpe_code": {
             "position": {
-                "x": 3028,
-                "y": 2143
+                "x": 3770,
+                "y": 1551
+            }
+        }
+    },
+    "$__mpe_external_退出界面_扫荡试炼之地": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3770,
+                "y": 1050
             }
         }
     },
@@ -87,8 +95,30 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3373,
-                "y": 957
+                "x": 3511,
+                "y": 1551
+            }
+        }
+    },
+    "未达上限_试炼之地": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "准备扫荡",
+            "[JumpBack]退出界面",
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3507,
+                "y": 928
             }
         }
     },
@@ -131,10 +161,10 @@
         },
         "timeout": 1000,
         "next": [
-            "已达上限_试炼之地"
+            "未达上限_试炼之地"
         ],
         "on_error": [
-            "准备扫荡"
+            "已达上限_试炼之地"
         ],
         "$__mpe_code": {
             "position": {
@@ -156,12 +186,12 @@
         "action": {
             "type": "Click"
         },
-        "timeout": 2000,
+        "timeout": 1000,
         "next": [
-            "已达上限_试炼之地"
+            "未达上限_试炼之地"
         ],
         "on_error": [
-            "准备扫荡"
+            "已达上限_试炼之地"
         ],
         "$__mpe_code": {
             "position": {
@@ -185,10 +215,10 @@
         },
         "timeout": 1000,
         "next": [
-            "已达上限_试炼之地"
+            "未达上限_试炼之地"
         ],
         "on_error": [
-            "准备扫荡"
+            "已达上限_试炼之地"
         ],
         "$__mpe_code": {
             "position": {
@@ -212,10 +242,10 @@
         },
         "timeout": 1000,
         "next": [
-            "已达上限_试炼之地"
+            "未达上限_试炼之地"
         ],
         "on_error": [
-            "准备扫荡"
+            "已达上限_试炼之地"
         ],
         "$__mpe_code": {
             "position": {
@@ -267,10 +297,10 @@
         },
         "timeout": 1000,
         "next": [
-            "已达上限_试炼之地"
+            "未达上限_试炼之地"
         ],
         "on_error": [
-            "准备扫荡"
+            "已达上限_试炼之地"
         ],
         "$__mpe_code": {
             "position": {

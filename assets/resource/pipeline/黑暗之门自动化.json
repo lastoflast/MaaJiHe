@@ -3,17 +3,25 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791778626382,
+            "lastSyncTime": 1792042581311,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\黑暗之门自动化.json",
             "savedViewport": {
-                "x": -1925,
+                "x": -1604,
                 "y": 29,
-                "zoom": 1
+                "zoom": 0.94
             },
             "filename": "黑暗之门自动化",
             "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_黑暗之门自动化": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2185,
+                "y": 671
+            }
         }
     },
     "$__mpe_external_退出界面_黑暗之门自动化": {
@@ -194,17 +202,14 @@
             "param": {
                 "roi": [
                     0,
-                    630,
-                    137,
-                    249
+                    320,
+                    140,
+                    960
                 ],
                 "template": [
                     "技能已满_绿色遮罩.png"
                 ],
-                "green_mask": true,
-                "threshold": [
-                    0.6
-                ]
+                "green_mask": true
             }
         },
         "action": {
@@ -315,6 +320,9 @@
         "timeout": 2000,
         "next": [
             "开始挑战_大"
+        ],
+        "on_error": [
+            "关闭弹窗"
         ],
         "$__mpe_code": {
             "position": {

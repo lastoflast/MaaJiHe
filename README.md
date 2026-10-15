@@ -1,14 +1,23 @@
 <!-- markdownlint-disable MD033 MD041 -->
 
-![](H:\Maa Projects\MaaJiHe\assets\resource\image\几何王国.png)
+<p align="center">
+  <img alt="LOGO" src="https://raw.githubusercontent.com/lastoflast/MaaJiHe/main/assets/resource/image/几何王国.png" width="256" height="256" />
+</p>
 
-
+<div align="center">
+  
 # MaaJiHe
+  
+基于全新架构的 几何王国 小助手。图像技术 + 模拟控制，解放双手！  
+由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
 
 </div>
 
-基于全新架构的 战双帕弥什 小助手。图像技术 + 模拟控制，解放双手！  
-由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
+<p align="center">
+  <img alt="license" src="https://img.shields.io/github/license/lastoflast/MaaJiHe">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
+  <img alt="platform" src="https://img.shields.io/badge/platform-Windows-blueviolet">
+</p>
 
 ## 免责声明
 

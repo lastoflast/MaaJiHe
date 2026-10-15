@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791879162854,
+            "lastSyncTime": 1791879305096,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\通用函数.json",
             "savedViewport": {
-                "x": -3213,
-                "y": -2594,
-                "zoom": 2.5
+                "x": -674,
+                "y": -234,
+                "zoom": 1.5
             },
             "filename": "通用函数",
             "version": "v2.1.0"
@@ -145,6 +145,9 @@
             "param": {
                 "template": [
                     "扫荡.png"
+                ],
+                "threshold": [
+                    0.8
                 ]
             }
         },

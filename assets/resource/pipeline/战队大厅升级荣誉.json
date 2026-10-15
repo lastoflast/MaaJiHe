@@ -3,24 +3,24 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791391392439,
+            "lastSyncTime": 1792040911747,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战队大厅升级荣誉.json",
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战队大厅升级荣誉.json",
             "savedViewport": {
-                "x": -1838,
-                "y": 11,
+                "x": -1941,
+                "y": -20,
                 "zoom": 0.94
             },
             "filename": "战队大厅升级荣誉",
-            "version": "v2.0.1"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_external_退出界面_战队大厅升级荣誉": {
         "$__mpe_code": {
             "position": {
-                "x": 3958,
-                "y": 885
+                "x": 4242,
+                "y": 823
             }
         }
     },
@@ -151,8 +151,9 @@
                 "template": [
                     "0章.png"
                 ],
+                "green_mask": true,
                 "threshold": [
-                    0.9
+                    0.85
                 ]
             }
         },
@@ -166,8 +167,33 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2887,
+                "x": 2890,
                 "y": 361
+            }
+        }
+    },
+    "识别黄金勋章状态": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "黄金勋章.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "inverse": true,
+        "timeout": 2000,
+        "next": [
+            "升级3次",
+            "提升3秒"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3156,
+                "y": 362
             }
         }
     },
@@ -190,8 +216,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2891,
-                "y": 830
+                "x": 3158,
+                "y": 771
             }
         }
     },
@@ -212,33 +238,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3148,
-                "y": 834
-            }
-        }
-    },
-    "识别黄金勋章状态": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "黄金勋章.png"
-                ],
-                "threshold": [
-                    0.9
-                ]
-            }
-        },
-        "inverse": true,
-        "timeout": 2000,
-        "next": [
-            "升级3次",
-            "提升3秒"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3153,
-                "y": 358
+                "x": 3428,
+                "y": 773
             }
         }
     }

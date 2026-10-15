@@ -3,17 +3,25 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791882095018,
+            "lastSyncTime": 1791957336910,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速巡逻.json",
             "savedViewport": {
-                "x": -2676,
-                "y": -499,
+                "x": -2826,
+                "y": -349,
                 "zoom": 1.57
             },
             "filename": "快速巡逻",
             "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_啥也不做_快速巡逻": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2493,
+                "y": 839
+            }
         }
     },
     "$__mpe_external_关闭弹窗两次_快速巡逻": {
@@ -78,6 +86,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 500,
         "timeout": 2000,
         "next": [
             "[JumpBack]领取快速巡逻奖励"
@@ -104,6 +113,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 500,
         "next": [
             "快速巡逻"
         ],
@@ -117,15 +127,13 @@
     "领取快速巡逻奖励": {
         "max_hit": 4,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "FeatureMatch",
             "param": {
                 "template": [
                     "快速巡逻/0钻.png",
                     "快速巡逻/50钻.png"
                 ],
-                "threshold": [
-                    0.875
-                ]
+                "count": 16
             }
         },
         "action": {
@@ -135,10 +143,13 @@
         "next": [
             "领取奖励两次"
         ],
+        "on_error": [
+            "啥也不做"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 2252,
-                "y": 610
+                "x": 2250,
+                "y": 609
             }
         }
     }

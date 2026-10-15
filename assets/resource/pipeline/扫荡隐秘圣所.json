@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791545939354,
+            "lastSyncTime": 1791958279148,
             "isModifiedExternally": false,
-            "isDeleted": true,
-            "filePath": "\\\\?\\H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡隐秘圣所.json",
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡隐秘圣所.json",
             "savedViewport": {
-                "x": -1837,
-                "y": 201,
-                "zoom": 0.94
+                "x": -2508,
+                "y": 177,
+                "zoom": 0.99
             },
             "filename": "扫荡隐秘圣所",
-            "version": "v2.0.1"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_external_去竞技场_扫荡隐秘圣所": {
@@ -30,6 +30,26 @@
                 "x": 4438,
                 "y": 592
             }
+        }
+    },
+    "$__mpe_external_领取奖励两次_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4441,
+                "y": 343
+            }
+        }
+    },
+    "$__mpe_sticker_便签_扫荡隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4182,
+                "y": 625
+            },
+            "content": "这里退出并提示用户手动操作",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
         }
     },
     "场外识别券数量_进入隐秘圣所前": {
@@ -100,6 +120,9 @@
         "timeout": 2000,
         "next": [
             "进入隐秘圣所"
+        ],
+        "on_error": [
+            "关闭弹窗"
         ],
         "$__mpe_code": {
             "position": {
@@ -184,24 +207,12 @@
             }
         }
     },
-    "$__mpe_external_领取奖励两次_扫荡隐秘圣所": {
+    "$__mpe_external_关闭弹窗_扫荡隐秘圣所": {
         "$__mpe_code": {
             "position": {
-                "x": 4441,
-                "y": 343
+                "x": 3427,
+                "y": 650
             }
-        }
-    },
-    "$__mpe_sticker_便签_扫荡隐秘圣所": {
-        "$__mpe_code": {
-            "position": {
-                "x": 4182,
-                "y": 625
-            },
-            "content": "这里退出并提示用户手动操作",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
         }
     }
 }
