@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791796913714,
+            "lastSyncTime": 1792386315947,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\自动祈愿.json",
             "savedViewport": {
-                "x": -4246,
-                "y": -456,
-                "zoom": 0.63
+                "x": -18154,
+                "y": -3061,
+                "zoom": 2.49
             },
             "filename": "自动祈愿",
             "version": "v2.1.0"
@@ -38,18 +38,6 @@
                 "x": 8089,
                 "y": 1570
             }
-        }
-    },
-    "$__mpe_sticker_便签_自动祈愿": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7583,
-                "y": 1244
-            },
-            "content": "填入几轮改为max_hit",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
         }
     },
     "中继节点_祈愿": {

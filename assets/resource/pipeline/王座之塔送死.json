@@ -3,17 +3,25 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791958389378,
+            "lastSyncTime": 1792211196916,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\王座之塔送死.json",
             "savedViewport": {
-                "x": -1087,
-                "y": 147,
+                "x": -1174,
+                "y": 310,
                 "zoom": 0.99
             },
             "filename": "王座之塔送死",
             "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_王座之塔送死": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1751,
+                "y": 510
+            }
         }
     },
     "$__mpe_external_去竞技场_王座之塔送死": {
@@ -139,41 +147,6 @@
             }
         }
     },
-    "票数大于n时重复执行": {
-        "max_hit": 3,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    1,
-                    1,
-                    170,
-                    165
-                ],
-                "expected": [
-                    "10",
-                    "9",
-                    "8",
-                    "7",
-                    "6",
-                    "5",
-                    "4",
-                    "3",
-                    "2",
-                    "1"
-                ]
-            }
-        },
-        "next": [
-            "挑战王座之塔"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2004,
-                "y": 219
-            }
-        }
-    },
     "等待10秒_王座之塔": {
         "max_hit": 10,
         "pre_delay": 5000,
@@ -216,11 +189,27 @@
             }
         }
     },
-    "$__mpe_external_关闭弹窗_王座之塔送死": {
+    "票数大于n时重复执行": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "0挑战券.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "挑战王座之塔"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 1751,
-                "y": 510
+                "x": 2004,
+                "y": 219
             }
         }
     }

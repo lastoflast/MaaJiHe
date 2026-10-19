@@ -3,25 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791957336910,
+            "lastSyncTime": 1792208799592,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速巡逻.json",
             "savedViewport": {
-                "x": -2826,
-                "y": -349,
-                "zoom": 1.57
+                "x": -1879,
+                "y": -516,
+                "zoom": 1.5
             },
             "filename": "快速巡逻",
             "version": "v2.1.0"
-        }
-    },
-    "$__mpe_external_啥也不做_快速巡逻": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2493,
-                "y": 839
-            }
         }
     },
     "$__mpe_external_关闭弹窗两次_快速巡逻": {
@@ -37,6 +29,14 @@
             "position": {
                 "x": 1754,
                 "y": 515
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_快速巡逻": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2493,
+                "y": 839
             }
         }
     },
@@ -107,7 +107,8 @@
             "param": {
                 "template": [
                     "巡逻图标/"
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": {

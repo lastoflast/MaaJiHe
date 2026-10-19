@@ -1,0 +1,750 @@
+{
+    "$__mpe_config_隐秘圣所": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1792397500054,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\隐秘圣所.json",
+            "savedViewport": {
+                "x": -4581,
+                "y": -538,
+                "zoom": 0.94
+            },
+            "filename": "隐秘圣所",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3427,
+                "y": 650
+            }
+        }
+    },
+    "$__mpe_external_去竞技场_隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3182,
+                "y": 243
+            }
+        }
+    },
+    "$__mpe_external_退出界面_隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5441,
+                "y": 555
+            }
+        }
+    },
+    "$__mpe_external_领取奖励两次_隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4441,
+                "y": 343
+            },
+            "extra_positions": [
+                {
+                    "x": 4710,
+                    "y": 711
+                }
+            ]
+        }
+    },
+    "场外识别券数量_进入隐秘圣所前": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "竞技券数量/"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]去竞技场"
+        ],
+        "on_error": [
+            "点击冒险_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2927,
+                "y": 244
+            }
+        }
+    },
+    "扫荡隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "扫荡.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]确认扫荡_隐秘圣所"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3937,
+                "y": 343
+            }
+        }
+    },
+    "点击冒险_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "冒险.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "进入隐秘圣所"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3178,
+                "y": 341
+            }
+        }
+    },
+    "点击知道了": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "知道了.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "timeout": 2000,
+        "next": [
+            "扫荡隐秘圣所"
+        ],
+        "on_error": [
+            "挑战下一层_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3680,
+                "y": 342
+            }
+        }
+    },
+    "确认扫荡_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励两次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4190,
+                "y": 342
+            }
+        }
+    },
+    "进入隐秘圣所": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "隐秘圣所"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "timeout": 2000,
+        "next": [
+            "点击知道了"
+        ],
+        "on_error": [
+            "扫荡隐秘圣所",
+            "挑战下一层_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3428,
+                "y": 339
+            }
+        }
+    },
+    "碾压_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/碾压.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励两次"
+        ],
+        "on_error": [
+            "选择传说buff",
+            "选择精英buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4450,
+                "y": 711
+            }
+        }
+    },
+    "选择传说buff": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    720,
+                    720
+                ],
+                "template": [
+                    "隐秘圣所/传说buff.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "确定选择buff"
+        ],
+        "on_error": [
+            "可替换精英buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5491,
+                "y": 1169
+            }
+        }
+    },
+    "确定选择buff": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/确认选择buff.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1500,
+        "next": [
+            "选择buff完成"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6391,
+                "y": 920
+            }
+        }
+    },
+    "识别怪物层_竖直方向": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/圣所_非boss.png",
+                    "隐秘圣所/圣所_小boss.png",
+                    "隐秘圣所/圣所_大boss.png"
+                ],
+                "green_mask": true,
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "碾压_隐秘圣所",
+            "战斗_隐秘圣所"
+        ],
+        "on_error": [
+            "识别怪物层_水平方向"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4191,
+                "y": 711
+            }
+        }
+    },
+    "选择精英buff": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    720,
+                    720
+                ],
+                "template": [
+                    "隐秘圣所/精英buff.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "确定选择buff"
+        ],
+        "on_error": [
+            "跳过替换buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5490,
+                "y": 1552
+            }
+        }
+    },
+    "战斗_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/战斗.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "一键上阵_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4449,
+                "y": 1071
+            }
+        }
+    },
+    "一键上阵_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键上阵.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "下一队",
+        "next": [
+            "开始战斗_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4709,
+                "y": 1070
+            }
+        }
+    },
+    "开始战斗_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始战斗.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "无上阵英雄_隐秘圣所",
+            "等待5秒_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4709,
+                "y": 1428
+            }
+        }
+    },
+    "等待5秒_隐秘圣所": {
+        "max_hit": 500,
+        "pre_delay": 2500,
+        "post_delay": 2500,
+        "timeout": 2000,
+        "next": [
+            "打通一层_隐秘圣所",
+            "再次挑战_隐秘圣所",
+            "等待5秒_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4970,
+                "y": 1070
+            }
+        }
+    },
+    "再次挑战_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "再次挑战.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "一键上阵_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5230,
+                "y": 1510
+            }
+        }
+    },
+    "打通一层_隐秘圣所": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "repeat_delay": 200,
+        "post_delay": 1500,
+        "timeout": 2000,
+        "focus": "",
+        "next": [
+            "选择神话buff",
+            "选择传说buff",
+            "选择精英buff"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5229,
+                "y": 1069
+            }
+        }
+    },
+    "识别怪物层_水平方向": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/圣所_非boss.png",
+                    "隐秘圣所/圣所_小boss.png",
+                    "隐秘圣所/圣所_大boss.png"
+                ],
+                "green_mask": true,
+                "order_by": "Horizontal",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "碾压_隐秘圣所",
+            "战斗_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4190,
+                "y": 1190
+            }
+        }
+    },
+    "挑战下一层_隐秘圣所": {
+        "timeout": 2000,
+        "next": [
+            "识别怪物层_竖直方向"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3936,
+                "y": 710
+            }
+        }
+    },
+    "替换传说buff": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "roi": [
+                    0,
+                    560,
+                    720,
+                    720
+                ],
+                "template": [
+                    "隐秘圣所/传说buff.png"
+                ],
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "替换buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6089,
+                "y": 1363
+            }
+        }
+    },
+    "替换精英buff": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "roi": [
+                    0,
+                    560,
+                    720,
+                    720
+                ],
+                "template": [
+                    "隐秘圣所/精英buff.png"
+                ],
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "替换buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6089,
+                "y": 1066
+            }
+        }
+    },
+    "替换buff": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/替换buff.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1500,
+        "next": [
+            "选择buff完成"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6391,
+                "y": 1219
+            }
+        }
+    },
+    "选择神话buff": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    720,
+                    720
+                ],
+                "template": [
+                    "隐秘圣所/神话buff.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "确定选择buff"
+        ],
+        "on_error": [
+            "可替换精英和传说buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5489,
+                "y": 770
+            }
+        }
+    },
+    "跳过替换buff": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "隐秘圣所/跳过.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "选择buff完成"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6390,
+                "y": 1520
+            }
+        }
+    },
+    "选择buff完成": {
+        "next": [
+            "挑战下一层_隐秘圣所"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6668,
+                "y": 1252
+            }
+        }
+    },
+    "可替换精英buff": {
+        "timeout": 2000,
+        "next": [
+            "替换精英buff"
+        ],
+        "on_error": [
+            "跳过替换buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5789,
+                "y": 1360
+            }
+        }
+    },
+    "可替换精英和传说buff": {
+        "timeout": 2000,
+        "on_error": [
+            "跳过替换buff"
+        ],
+        "next": [
+            "替换精英buff",
+            "替换传说buff"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5789,
+                "y": 1109
+            }
+        }
+    },
+    "无上阵英雄_隐秘圣所": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "无上阵英雄"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 4968,
+                "y": 1427
+            }
+        }
+    },
+    "$__mpe_sticker_便签_隐秘圣所": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5985,
+                "y": 863
+            },
+            "content": "识别率0.5左右",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    }
+}

@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792040911747,
+            "lastSyncTime": 1792297319573,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战队大厅升级荣誉.json",
             "savedViewport": {
-                "x": -1941,
-                "y": -20,
+                "x": -2045,
+                "y": 140,
                 "zoom": 0.94
             },
             "filename": "战队大厅升级荣誉",
@@ -22,6 +22,18 @@
                 "x": 4242,
                 "y": 823
             }
+        }
+    },
+    "$__mpe_sticker_便签_战队大厅升级荣誉": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3962,
+                "y": 602
+            },
+            "content": "存在未知bug",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
         }
     },
     "升级3次": {
@@ -37,6 +49,7 @@
             "type": "Click"
         },
         "repeat": 3,
+        "repeat_delay": 200,
         "timeout": 2000,
         "next": [
             "白银勋章不足"
@@ -115,6 +128,7 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 2000,
         "next": [
             "点击大厅"
         ],
@@ -192,8 +206,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3156,
-                "y": 362
+                "x": 3157,
+                "y": 363
             }
         }
     },
@@ -214,6 +228,9 @@
         "next": [
             "黄金勋章不足"
         ],
+        "on_error": [
+            "识别白银勋章数量"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 3158,
@@ -232,9 +249,6 @@
         },
         "next": [
             "退出界面"
-        ],
-        "on_error": [
-            "识别白银勋章数量"
         ],
         "$__mpe_code": {
             "position": {

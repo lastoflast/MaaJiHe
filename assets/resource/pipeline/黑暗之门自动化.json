@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792042581311,
+            "lastSyncTime": 1792212765266,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\黑暗之门自动化.json",
             "savedViewport": {
-                "x": -1604,
-                "y": 29,
+                "x": -1488,
+                "y": 43,
                 "zoom": 0.94
             },
             "filename": "黑暗之门自动化",
@@ -46,7 +46,7 @@
                 "x": 2705,
                 "y": 163
             },
-            "content": "只支持技能缓慢愈合 提醒军需官升级",
+            "content": "该多少阈值合适？",
             "color": "yellow",
             "width": 200,
             "height": 160
@@ -77,6 +77,7 @@
     "延迟1秒": {
         "pre_delay": 500,
         "post_delay": 500,
+        "timeout": 25000,
         "next": [
             "点技能"
         ],
@@ -209,7 +210,10 @@
                 "template": [
                     "技能已满_绿色遮罩.png"
                 ],
-                "green_mask": true
+                "green_mask": true,
+                "threshold": [
+                    0.6
+                ]
             }
         },
         "action": {

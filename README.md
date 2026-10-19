@@ -5,9 +5,9 @@
 </p>
 
 <div align="center">
-  
+
 # MaaJiHe
-  
+
 基于全新架构的 几何王国 小助手。图像技术 + 模拟控制，解放双手！  
 由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
 
@@ -16,8 +16,10 @@
 <p align="center">
   <img alt="license" src="https://img.shields.io/github/license/lastoflast/MaaJiHe">
   <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
-  <img alt="platform" src="https://img.shields.io/badge/platform-Windows-blueviolet">
+  <img alt="platform" src="https://img.shields.io/badge/platform-Android%20%7C%20Windows-blueviolet">
 </p>
+
+
 
 ## 免责声明
 
@@ -56,11 +58,19 @@
 
 下载地址：[https://github.com/lastoflast/MaaJiHe/releases](https://github.com/lastoflast/MaaJiHe/releases)
 
+### Android
+
+- 下载 ``MaaJiHe-android-vXXX.apk` 并安装。
+- Android 包名：com.lastoflast.maafw.jihe。
+- Shizuku / root 授权及后续操作请参考 [MaaFwApp 使用说明](https://github.com/Aliothmoon/MaaFwApp#使用已打包的应用)。
+- 首次启动后按应用引导授予通知、电池优化白名单，以及 Shizuku 或 root 权限。
+- 未配置正式签名的开发构建会带有 `-debug` 后缀；安装后续正式版本前可能需要先卸载开发版。
+
 ### Windows
 
 - 对于绝大部分用户，请下载 `MaaJiHe-win-x86_64-vXXX.zip`
 - ~~若确定自己的电脑是 arm 架构，请下载 `MaaJiHe-win-aarch64-vXXX.zip`~~
-- 解压后运行 `几何王国小助手`即可
+- 解压后运行 `MaaJiHe.exe`即可
 
 ## 鸣谢
 
@@ -76,3 +86,7 @@
 
 - [MFW-ChainFlow Assistant](https://github.com/overflow65537/MFW-PyQt6)
   基于 PySide6 的 MaaFramework 前端 | A frontend based on PySide6 for MaaFramework
+
+- [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)
+
+  MaaFramework 的通用 Android GUI | A general-purpose Android GUI for MaaFramework

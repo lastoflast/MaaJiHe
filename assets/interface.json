@@ -11,7 +11,7 @@
     "welcome": "欢迎使用 几何王国 小助手！",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/lastoflast/MaaJiHe",
-    "version": "1.0.1",
+    "version": "1.1.0",
     // Mirror酱为第三方分发服务，新项目默认关闭
     // 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
     // "mirrorchyan_rid": "MaaXXX",
@@ -25,9 +25,9 @@
                 "window_regex": ".*几何王国.*",
                 // 截图及控制方式，请根据项目实际情况修改
                 // 文档: https://maafw.xyz/docs/2.4-ControlMethods
-                "screencap": "PrintWindow", // 截图方式
-                "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
-                "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
+                "screencap": "FramePool", // 截图方式
+                "mouse": "SendMessage", // 鼠标控制方式
+                "keyboard": "SendMessage" // 键盘控制方式
             },
             "option": []
         },
@@ -117,7 +117,6 @@
         {
             "name": "隐秘圣所",
             "entry": "场外识别券数量_进入隐秘圣所前",
-            "description": "仅扫荡。",
             "group": [
                 "上午"
             ],
@@ -193,13 +192,14 @@
             "group": [
                 "工具"
             ],
-            "pipeline_override": {
-                "输入兑换码": {
-                    "input_text": "TNSU66"
-                }
-            },
-            "default_check": true,
-            "description": "自动使用兑换码\n（暂时仅每周兑换码，需每周更新）\n（TNSU66 10.12-10.18 无券）"
+            "pipeline_override": {},
+            "default_check": false,
+            "description": "请自行填入已收集的兑换码",
+            "option": [
+                "第一个兑换码",
+                "第二个兑换码",
+                "第三个兑换码"
+            ]
         },
         {
             "name": "进入部落争霸",
@@ -211,7 +211,7 @@
             "default_check": true
         },
         {
-            "name": "购买部落争霸礼包",
+            "name": "部落争霸购买礼包",
             "entry": "点击礼包_部落争霸",
             "group": [
                 "部落争霸"
@@ -248,16 +248,22 @@
             "group": [
                 "部落争霸"
             ]
+        },
+        {
+            "name": "浮空秘境购买礼包",
+            "entry": "进入浮空秘境",
+            "option": [
+                "购买体力药"
+            ],
+            "group": [
+                "工具"
+            ]
         }
     ],
     "option": {
         "自定义次数": {
             "type": "input",
-            "cases": [
-                {
-                    "name": "默认"
-                }
-            ],
+            "cases": [],
             "default_case": [],
             "inputs": [
                 {
@@ -305,43 +311,52 @@
             ],
             "default_case": "3次"
         },
-        "兑换码类型": {
-            "type": "select",
-            "cases": [
+        "输入兑换码": {
+            "type": "input",
+            "cases": [],
+            "inputs": [
                 {
-                    "name": "全部可用"
+                    "name": "兑换码<1>",
+                    "pipeline_type": "string",
+                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
+                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
                 },
                 {
-                    "name": "无竞技券"
+                    "name": "兑换码<2>",
+                    "pipeline_type": "string",
+                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
+                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
                 },
                 {
-                    "name": "有竞技券"
-                }
-            ]
-        },
-        "快捷键": {
-            "type": "hotkey",
-            "cases": [
-                {
-                    "name": "默认"
+                    "name": "兑换码<3>",
+                    "pipeline_type": "string",
+                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
+                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
                 }
             ],
-            "hotkeys": [
-                {
-                    "name": "新字段1"
+            "description": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。",
+            "pipeline_override": {
+                "输入兑换码<1>": {
+                    "input_text": "{兑换码<1>}"
+                },
+                "输入兑换码<2>": {
+                    "input_text": "{兑换码<2>}"
+                },
+                "输入兑换码<3>": {
+                    "input_text": "{兑换码<3>}"
                 }
-            ]
+            }
         },
         "购买攻城令": {
             "type": "switch",
             "cases": [
                 {
-                    "name": "Yes",
                     "pipeline_override": {
                         "购买攻城令": {
                             "max_hit": 3
                         }
-                    }
+                    },
+                    "name": "Yes"
                 },
                 {
                     "name": "No",
@@ -429,6 +444,80 @@
                     }
                 }
             ]
+        },
+        "购买体力药": {
+            "type": "switch",
+            "cases": [
+                {
+                    "pipeline_override": {
+                        "购买体力药": {
+                            "max_hit": 1
+                        }
+                    },
+                    "name": "Yes"
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "购买体力药": {
+                            "max_hit": 0
+                        }
+                    }
+                }
+            ],
+            "description": "购买1次或不购买。（默认购买）",
+            "default_case": "Yes"
+        },
+        "第一个兑换码": {
+            "type": "input",
+            "cases": [],
+            "inputs": [
+                {
+                    "pipeline_type": "string",
+                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
+                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。",
+                    "name": "兑换码<1>"
+                }
+            ],
+            "pipeline_override": {
+                "输入兑换码<1>": {
+                    "input_text": "{兑换码<1>}"
+                }
+            }
+        },
+        "第二个兑换码": {
+            "type": "input",
+            "cases": [],
+            "inputs": [
+                {
+                    "name": "兑换码<2>",
+                    "pipeline_type": "string",
+                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
+                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
+                }
+            ],
+            "pipeline_override": {
+                "输入兑换码<2>": {
+                    "input_text": "{兑换码<2>}"
+                }
+            }
+        },
+        "第三个兑换码": {
+            "type": "input",
+            "cases": [],
+            "inputs": [
+                {
+                    "name": "兑换码<3>",
+                    "pipeline_type": "string",
+                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
+                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
+                }
+            ],
+            "pipeline_override": {
+                "输入兑换码<3>": {
+                    "input_text": "{兑换码<3>}"
+                }
+            }
         }
     },
     "group": [
