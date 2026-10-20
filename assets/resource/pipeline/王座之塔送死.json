@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792211196916,
+            "lastSyncTime": 1792491305150,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\王座之塔送死.json",
             "savedViewport": {
-                "x": -1174,
-                "y": 310,
-                "zoom": 0.99
+                "x": -3121,
+                "y": -92,
+                "zoom": 1.57
             },
             "filename": "王座之塔送死",
             "version": "v2.1.0"
@@ -147,48 +147,6 @@
             }
         }
     },
-    "等待10秒_王座之塔": {
-        "max_hit": 10,
-        "pre_delay": 5000,
-        "post_delay": 5000,
-        "timeout": 2000,
-        "next": [
-            "点击任意关闭两次",
-            "等待10秒_王座之塔"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2774,
-                "y": 217
-            }
-        }
-    },
-    "进入王座之塔": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "王座之塔"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 2000,
-        "next": [
-            "[JumpBack]票数大于n时重复执行"
-        ],
-        "on_error": [
-            "退出界面"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1749,
-                "y": 221
-            }
-        }
-    },
     "票数大于n时重复执行": {
         "max_hit": 3,
         "recognition": {
@@ -210,6 +168,54 @@
             "position": {
                 "x": 2004,
                 "y": 219
+            }
+        }
+    },
+    "等待10秒_王座之塔": {
+        "max_hit": 10,
+        "pre_delay": 5000,
+        "post_delay": 5000,
+        "timeout": 2000,
+        "next": [
+            "点击任意关闭两次",
+            "等待10秒_王座之塔"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2774,
+                "y": 217
+            }
+        }
+    },
+    "进入王座之塔": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    200,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "王座之塔"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]票数大于n时重复执行"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1749,
+                "y": 221
             }
         }
     }

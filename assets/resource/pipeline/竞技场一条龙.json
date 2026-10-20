@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792398179761,
+            "lastSyncTime": 1792491846191,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\竞技场一条龙.json",
             "savedViewport": {
-                "x": -1062,
-                "y": 132,
-                "zoom": 0.94
+                "x": -1661,
+                "y": -1050,
+                "zoom": 1.57
             },
             "filename": "竞技场一条龙",
             "version": "v2.1.0"
@@ -263,6 +263,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
                 "expected": [
                     "点击任意"
                 ]
@@ -333,6 +339,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    1000,
+                    720,
+                    600
+                ],
                 "expected": [
                     "排名奖励"
                 ],
@@ -359,6 +371,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    1000,
+                    720,
+                    600
+                ],
                 "expected": [
                     "排名奖励"
                 ],
@@ -425,6 +443,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]
@@ -447,6 +471,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]

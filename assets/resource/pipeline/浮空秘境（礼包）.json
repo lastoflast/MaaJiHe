@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792385590339,
+            "lastSyncTime": 1792491193333,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\浮空秘境（礼包）.json",
             "savedViewport": {
-                "x": -4907,
-                "y": -501,
-                "zoom": 0.99
+                "x": -8448,
+                "y": -1373,
+                "zoom": 1.57
             },
             "filename": "浮空秘境（礼包）",
             "version": "v2.1.0"
@@ -150,6 +150,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    600
+                ],
                 "expected": [
                     "备战"
                 ]

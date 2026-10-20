@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791879305096,
+            "lastSyncTime": 1792487369750,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\通用函数.json",
             "savedViewport": {
-                "x": -674,
-                "y": -234,
-                "zoom": 1.5
+                "x": -599,
+                "y": -434,
+                "zoom": 0.99
             },
             "filename": "通用函数",
             "version": "v2.1.0"
@@ -93,7 +93,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
+        "post_delay": 1000,
         "timeout": 2000,
         "next": [
             "退出界面"
@@ -172,6 +172,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
                 "expected": [
                     "点击任意"
                 ]
@@ -182,8 +188,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1731,
-                "y": 1230
+                "x": 1727,
+                "y": 1270
             }
         }
     },
@@ -191,6 +197,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
                 "expected": [
                     "点击任意"
                 ]
@@ -199,8 +211,8 @@
         "inverse": true,
         "$__mpe_code": {
             "position": {
-                "x": 1730,
-                "y": 1390
+                "x": 1727,
+                "y": 1430
             }
         }
     },
@@ -208,6 +220,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
                 "expected": [
                     "点击任意"
                 ]
@@ -224,8 +242,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1470,
-                "y": 1230
+                "x": 1466,
+                "y": 1270
             }
         }
     },
@@ -296,6 +314,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]
@@ -315,6 +339,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]
@@ -325,7 +355,8 @@
         },
         "timeout": 1000,
         "next": [
-            "领取奖励_副本1"
+            "领取奖励_副本1",
+            "扫荡"
         ],
         "on_error": [
             "关闭弹窗"
@@ -341,6 +372,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]
@@ -358,8 +395,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1085,
-                "y": 777
+                "x": 1087,
+                "y": 769
             }
         }
     },
@@ -367,6 +404,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]
@@ -375,8 +418,8 @@
         "inverse": true,
         "$__mpe_code": {
             "position": {
-                "x": 1724,
-                "y": 928
+                "x": 1726,
+                "y": 969
             }
         }
     },
@@ -388,8 +431,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1468,
-                "y": 967
+                "x": 1471,
+                "y": 1013
             }
         }
     },
@@ -397,6 +440,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]

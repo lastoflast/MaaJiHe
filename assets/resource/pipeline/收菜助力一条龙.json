@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792381426153,
+            "lastSyncTime": 1792491060810,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\收菜助力一条龙.json",
             "savedViewport": {
-                "x": -8881,
-                "y": -2330,
-                "zoom": 0.99
+                "x": -7248,
+                "y": -747,
+                "zoom": 0.8
             },
             "filename": "收菜助力一条龙",
             "version": "v2.1.0"
@@ -75,22 +75,10 @@
     "$__mpe_sticker_便签_收菜助力一条龙": {
         "$__mpe_code": {
             "position": {
-                "x": 10251,
-                "y": 2261
+                "x": 10236,
+                "y": 2264
             },
             "content": "提醒用户选择下轮奖励",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_布尔参数（可勾选）？_收菜助力一条龙": {
-        "$__mpe_code": {
-            "position": {
-                "x": 10658,
-                "y": 1285
-            },
-            "content": "仅神器周启用自动祈愿",
             "color": "yellow",
             "width": 200,
             "height": 160
@@ -168,6 +156,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    900,
+                    360,
+                    600
+                ],
                 "expected": [
                     "自动"
                 ]
@@ -300,6 +294,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    800,
+                    360,
+                    600
+                ],
                 "expected": [
                     "先祖招募"
                 ]
@@ -327,6 +327,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    700,
+                    720,
+                    700
+                ],
                 "expected": [
                     "兑换"
                 ]
@@ -457,6 +463,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    800,
+                    360,
+                    600
+                ],
                 "expected": [
                     "普通招募"
                 ]
@@ -491,7 +503,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
+        "post_delay": 1000,
         "timeout": 2000,
         "next": [
             "杂货店免费宝箱"
@@ -518,7 +530,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
+        "post_delay": 1500,
         "timeout": 2000,
         "next": [
             "点击求助_长",
@@ -557,6 +569,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    700,
+                    360,
+                    700
+                ],
                 "expected": [
                     "祈福神坛"
                 ]
@@ -692,6 +710,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    600,
+                    360,
+                    700
+                ],
                 "expected": [
                     "自行祈福"
                 ]
@@ -720,6 +744,7 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 2000,
         "next": [
             "点击选择英雄"
         ],
@@ -784,6 +809,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    200,
+                    360,
+                    500
+                ],
                 "expected": [
                     "选择英雄"
                 ]
@@ -807,6 +838,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    250,
+                    360,
+                    600
+                ],
                 "expected": [
                     "领取"
                 ]
@@ -846,10 +883,10 @@
     },
     "获得新英雄": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "expected": [
-                    "太棒了"
+                "template": [
+                    "太棒了.png"
                 ]
             }
         },
@@ -861,8 +898,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9968,
-                "y": 1670
+                "x": 9969,
+                "y": 1642
             }
         }
     },
@@ -919,6 +956,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    150,
+                    720,
+                    600
+                ],
                 "expected": [
                     "恭喜获得"
                 ]

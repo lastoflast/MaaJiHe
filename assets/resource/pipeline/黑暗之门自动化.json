@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792212765266,
+            "lastSyncTime": 1792500733365,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\黑暗之门自动化.json",
             "savedViewport": {
-                "x": -1488,
-                "y": 43,
-                "zoom": 0.94
+                "x": -1551,
+                "y": -76,
+                "zoom": 0.79
             },
             "filename": "黑暗之门自动化",
             "version": "v2.1.0"
@@ -19,24 +19,24 @@
     "$__mpe_external_关闭弹窗_黑暗之门自动化": {
         "$__mpe_code": {
             "position": {
-                "x": 2185,
-                "y": 671
+                "x": 2190,
+                "y": 709
             }
         }
     },
     "$__mpe_external_退出界面_黑暗之门自动化": {
         "$__mpe_code": {
             "position": {
-                "x": 3970,
-                "y": 911
+                "x": 4001,
+                "y": 650
             }
         }
     },
     "$__mpe_external_领取奖励_黑暗之门自动化": {
         "$__mpe_code": {
             "position": {
-                "x": 3966,
-                "y": 626
+                "x": 3997,
+                "y": 365
             }
         }
     },
@@ -82,13 +82,12 @@
             "点技能"
         ],
         "on_error": [
-            "点到金币处理",
-            "确定结束_黑暗之门"
+            "点击任意关闭_黑暗之门"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2943,
-                "y": 358
+                "x": 2960,
+                "y": 362
             }
         }
     },
@@ -167,36 +166,6 @@
             }
         }
     },
-    "点到金币处理": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "金币"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    375,
-                    1200,
-                    1,
-                    1
-                ]
-            }
-        },
-        "next": [
-            "确定结束_黑暗之门"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2946,
-                "y": 663
-            }
-        }
-    },
     "点技能": {
         "recognition": {
             "type": "TemplateMatch",
@@ -228,35 +197,6 @@
             "position": {
                 "x": 2698,
                 "y": 358
-            }
-        }
-    },
-    "确定结束_黑暗之门": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "确定_绿.png"
-                ],
-                "threshold": [
-                    0.5
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 2000,
-        "next": [
-            "默认扫荡"
-        ],
-        "on_error": [
-            "退出界面"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3202,
-                "y": 623
             }
         }
     },
@@ -303,8 +243,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3712,
-                "y": 625
+                "x": 3743,
+                "y": 364
             }
         }
     },
@@ -312,6 +252,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    600,
+                    360,
+                    600
+                ],
                 "expected": [
                     "黑暗之门"
                 ]
@@ -339,6 +285,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    500,
+                    360,
+                    600
+                ],
                 "expected": [
                     "扫荡"
                 ]
@@ -352,8 +304,41 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3454,
-                "y": 623
+                "x": 3492,
+                "y": 365
+            }
+        }
+    },
+    "点击任意关闭_黑暗之门": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
+                "expected": [
+                    "点击任意"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "repeat_delay": 200,
+        "next": [
+            "默认扫荡"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3228,
+                "y": 365
             }
         }
     }

@@ -7,7 +7,7 @@
     "name": "MaaJiHe",
     "description": "基于全新架构的 几何王国 小助手。图像技术 + 模拟控制，解放双手！【大部分任务从主界面开始识别执行】",
     "contact": "QQ: 1974843952",
-    "license": "MIT",
+    "license": "本项目基于 MIT 协议开源",
     "welcome": "欢迎使用 几何王国 小助手！",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/lastoflast/MaaJiHe",
@@ -33,8 +33,7 @@
         },
         {
             "name": "安卓端",
-            "type": "Adb",
-            "display_short_side": 720 // 默认缩放分辨率的短边长度
+            "type": "Adb" // 默认缩放分辨率的短边长度
         }
     ],
     "resource": [
@@ -184,7 +183,8 @@
             ],
             "option": [
                 "自定义次数"
-            ]
+            ],
+            "description": "祈愿时窗口尽量为9:16"
         },
         {
             "name": "兑换码",

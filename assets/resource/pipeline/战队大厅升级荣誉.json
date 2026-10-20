@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792297319573,
+            "lastSyncTime": 1792487617197,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战队大厅升级荣誉.json",
             "savedViewport": {
-                "x": -2045,
-                "y": 140,
-                "zoom": 0.94
+                "x": -2221,
+                "y": 15,
+                "zoom": 0.99
             },
             "filename": "战队大厅升级荣誉",
             "version": "v2.1.0"
@@ -105,6 +105,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 500,
         "timeout": 2000,
         "next": [
             "识别白银勋章数量"
@@ -128,6 +129,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "timeout": 2000,
         "next": [
             "点击大厅"
@@ -143,6 +145,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    350,
+                    720,
+                    600
+                ],
                 "expected": [
                     "白银勋章不足"
                 ]
@@ -215,6 +223,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    1000,
+                    720,
+                    600
+                ],
                 "expected": [
                     "进阶"
                 ]
@@ -242,6 +256,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    350,
+                    720,
+                    600
+                ],
                 "expected": [
                     "黄金勋章不足"
                 ]

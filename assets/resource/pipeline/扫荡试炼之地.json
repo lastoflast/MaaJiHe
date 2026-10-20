@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792039748059,
+            "lastSyncTime": 1792490055277,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡试炼之地.json",
             "savedViewport": {
-                "x": -684,
-                "y": -196,
-                "zoom": 0.63
+                "x": -2183,
+                "y": -924,
+                "zoom": 0.99
             },
             "filename": "扫荡试炼之地",
             "version": "v2.1.0"
@@ -147,10 +147,16 @@
         }
     },
     "进入_宝石矿洞": {
-        "max_hit": 3,
+        "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    1000,
+                    360,
+                    600
+                ],
                 "expected": [
                     "宝石矿洞"
                 ]
@@ -174,10 +180,16 @@
         }
     },
     "进入_月光神殿": {
-        "max_hit": 3,
+        "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    750,
+                    360,
+                    600
+                ],
                 "expected": [
                     "月光神殿"
                 ]
@@ -201,10 +213,16 @@
         }
     },
     "进入_神秘森林": {
-        "max_hit": 3,
+        "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    500,
+                    360,
+                    600
+                ],
                 "expected": [
                     "神秘森林"
                 ]
@@ -228,10 +246,16 @@
         }
     },
     "进入废弃矿山": {
-        "max_hit": 3,
+        "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    0,
+                    360,
+                    600
+                ],
                 "expected": [
                     "废弃矿山"
                 ]
@@ -258,6 +282,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    600
+                ],
                 "expected": [
                     "试炼之地"
                 ]
@@ -283,10 +313,16 @@
         }
     },
     "进入远古战场": {
-        "max_hit": 3,
+        "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    250,
+                    360,
+                    600
+                ],
                 "expected": [
                     "远古战场"
                 ]

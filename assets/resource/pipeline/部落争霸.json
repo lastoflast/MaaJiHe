@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792039302018,
+            "lastSyncTime": 1792492106925,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\部落争霸.json",
             "savedViewport": {
-                "x": -3119,
-                "y": 315,
-                "zoom": 0.94
+                "x": -3046,
+                "y": 175,
+                "zoom": 0.99
             },
             "filename": "部落争霸",
             "version": "v2.1.0"
@@ -81,6 +81,22 @@
             "position": {
                 "x": 4210,
                 "y": 460
+            }
+        }
+    },
+    "中继节点_部落争霸": {
+        "timeout": 2000,
+        "next": [
+            "消耗n个攻城令"
+        ],
+        "on_error": [
+            "[JumpBack]关闭弹窗",
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3868,
+                "y": 1362
             }
         }
     },
@@ -187,10 +203,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    77,
-                    427,
-                    567,
-                    480
+                    0,
+                    450,
+                    720,
+                    700
                 ],
                 "expected": [
                     "消耗1个攻城令"
@@ -353,6 +369,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    600
+                ],
                 "expected": [
                     "备战"
                 ]
@@ -377,10 +399,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    100,
-                    300,
-                    525,
-                    400
+                    0,
+                    250,
+                    720,
+                    800
                 ],
                 "expected": [
                     "恭喜获得",
@@ -399,22 +421,6 @@
             "position": {
                 "x": 4127,
                 "y": 1008
-            }
-        }
-    },
-    "中继节点_部落争霸": {
-        "timeout": 2000,
-        "next": [
-            "消耗n个攻城令"
-        ],
-        "on_error": [
-            "[JumpBack]关闭弹窗",
-            "停止当前任务"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3868,
-                "y": 1362
             }
         }
     }

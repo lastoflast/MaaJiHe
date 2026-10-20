@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792386315947,
+            "lastSyncTime": 1792491865326,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\自动祈愿.json",
             "savedViewport": {
-                "x": -18154,
-                "y": -3061,
-                "zoom": 2.49
+                "x": -6049,
+                "y": -887,
+                "zoom": 0.99
             },
             "filename": "自动祈愿",
             "version": "v2.1.0"
@@ -81,6 +81,12 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    360,
+                    900,
+                    360,
+                    600
+                ],
                 "expected": [
                     "自动"
                 ]
