@@ -1,0 +1,419 @@
+{
+    "$__mpe_config_快速钓鱼": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1793602457672,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速钓鱼.json",
+            "savedViewport": {
+                "x": -1253,
+                "y": -779,
+                "zoom": 0.79
+            },
+            "filename": "快速钓鱼",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_anchor_继续自动钓鱼_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3129,
+                "y": 1924
+            }
+        }
+    },
+    "$__mpe_external_停止当前任务_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3390,
+                "y": 2230
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗并准备退出界面_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3390,
+                "y": 2151
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3391,
+                "y": 1871
+            }
+        }
+    },
+    "$__mpe_external_退出界面_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2349,
+                "y": 1481
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3390,
+                "y": 2010
+            }
+        }
+    },
+    "$__mpe_sticker_便签_快速钓鱼": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2882,
+                "y": 1497
+            },
+            "content": "此处图像识别有roi",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "处理渔获": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    800,
+                    720,
+                    800
+                ],
+                "template": [
+                    "钓鱼/出售.png",
+                    "钓鱼/提交订单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "[JumpBack]确定出售",
+            "[Anchor]继续自动钓鱼"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2868,
+                "y": 1668
+            }
+        }
+    },
+    "开始自动钓鱼": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钓鱼/开始自动钓鱼.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "鱼已上钩",
+            "面包不足"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2350,
+                "y": 1670
+            }
+        }
+    },
+    "打开钓鱼": {
+        "max_hit": 100,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钓鱼/钓鱼.png",
+                    "钓鱼/在渔场1.png",
+                    "钓鱼/在渔场2.png"
+                ],
+                "green_mask": true,
+                "order_by": "Score"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 1000,
+        "next": [
+            "检查是否在自动"
+        ],
+        "on_error": [
+            "点击自动钓鱼"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1830,
+                "y": 1430
+            }
+        }
+    },
+    "打开钓鱼领取订单": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钓鱼/钓鱼.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "每日订单"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1831,
+                "y": 2011
+            }
+        }
+    },
+    "新纪录": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钓鱼/新纪录.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "钓鱼纪录被打破，需要玩家亲自决策~"
+        },
+        "next": [
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2610,
+                "y": 1376
+            }
+        }
+    },
+    "检查是否在自动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    500,
+                    360,
+                    800
+                ],
+                "expected": [
+                    "自动钓鱼中"
+                ]
+            }
+        },
+        "next": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2088,
+                "y": 1429
+            }
+        }
+    },
+    "每日订单": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    640
+                ],
+                "expected": [
+                    "每日订单"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取订单",
+            "[JumpBack]关闭弹窗并准备退出界面",
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2870,
+                "y": 2010
+            }
+        }
+    },
+    "点击自动钓鱼": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钓鱼/自动钓鱼.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "继续自动钓鱼",
+        "post_delay": 1000,
+        "next": [
+            "开始自动钓鱼"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2090,
+                "y": 1670
+            }
+        }
+    },
+    "确定出售": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ],
+                "order_by": "Score"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3130,
+                "y": 1670
+            }
+        }
+    },
+    "钓鱼循环": {
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]打开钓鱼",
+            "打开钓鱼领取订单"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1571,
+                "y": 1431
+            }
+        }
+    },
+    "面包不足": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    300,
+                    360,
+                    800
+                ],
+                "expected": [
+                    "面包数量不足"
+                ]
+            }
+        },
+        "next": [
+            "每日订单"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2609,
+                "y": 2009
+            }
+        }
+    },
+    "领取订单": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "领取.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "领取奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3130,
+                "y": 2010
+            }
+        }
+    },
+    "鱼已上钩": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    300,
+                    360,
+                    800
+                ],
+                "expected": [
+                    "自动钓鱼结束"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    360,
+                    900,
+                    1,
+                    1
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "新纪录",
+            "处理渔获"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2610,
+                "y": 1670
+            }
+        }
+    }
+}

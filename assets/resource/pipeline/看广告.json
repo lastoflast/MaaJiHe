@@ -1,0 +1,295 @@
+{
+    "$__mpe_config_看广告": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1793601424705,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\看广告.json",
+            "savedViewport": {
+                "x": -3148,
+                "y": -482,
+                "zoom": 0.8
+            },
+            "filename": "看广告",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_关闭弹窗_看广告": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3848,
+                "y": 572
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_看广告": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4169,
+                "y": 942
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_看广告": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5128,
+                "y": 972
+            }
+        }
+    },
+    "关闭广告": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    0,
+                    360,
+                    640
+                ],
+                "expected": [
+                    "关闭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1500,
+        "next": [
+            "领取奖励",
+            "如果没看完再等3秒"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4808,
+                "y": 857
+            }
+        }
+    },
+    "如果没看完再等3秒": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    640,
+                    360,
+                    640
+                ],
+                "expected": [
+                    "继续"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 5000,
+        "next": [
+            "关闭广告"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4488,
+                "y": 823
+            }
+        }
+    },
+    "滑动浏览广告": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    660,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        360,
+                        620,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 10,
+        "repeat_delay": 3000,
+        "focus": "",
+        "next": [
+            "关闭广告"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4488,
+                "y": 1172
+            }
+        }
+    },
+    "点击成长宝箱": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "广告/成长宝箱.png"
+                ]
+            }
+        },
+        "pre_delay": 4000,
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "看广告开宝箱"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3848,
+                "y": 712
+            }
+        }
+    },
+    "点击杂货店_看广告": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "杂货店.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击成长宝箱",
+            "[JumpBack]点击资源宝箱",
+            "[JumpBack]点击英雄宝箱",
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3528,
+                "y": 744
+            }
+        }
+    },
+    "点击英雄宝箱": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "广告/英雄宝箱.png"
+                ]
+            }
+        },
+        "pre_delay": 4000,
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "看广告开宝箱"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3848,
+                "y": 1578
+            }
+        }
+    },
+    "点击菜单_看广告": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "菜单.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "点击杂货店_看广告"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3208,
+                "y": 781
+            }
+        }
+    },
+    "点击资源宝箱": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "广告/资源宝箱.png"
+                ]
+            }
+        },
+        "pre_delay": 4000,
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "看广告开宝箱"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3848,
+                "y": 1145
+            }
+        }
+    },
+    "看广告开宝箱": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "广告/看广告开宝箱.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "timeout": 2000,
+        "next": [
+            "滑动浏览广告"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4168,
+                "y": 1161
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@
     "welcome": "欢迎使用 几何王国 小助手！",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/lastoflast/MaaJiHe",
-    "version": "1.1.0",
+    "version": "1.2.0",
     // Mirror酱为第三方分发服务，新项目默认关闭
     // 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
     // "mirrorchyan_rid": "MaaXXX",
@@ -63,6 +63,24 @@
             "description": "（未考虑到升级的情况）"
         },
         {
+            "name": "开始钓鱼",
+            "entry": "打开钓鱼",
+            "default_check": true,
+            "group": [
+                "上午",
+                "下午"
+            ]
+        },
+        {
+            "name": "风暴战场",
+            "entry": "风暴战场",
+            "default_check": true,
+            "group": [
+                "上午",
+                "下午"
+            ]
+        },
+        {
             "name": "收菜助力",
             "entry": "收菜助力",
             "group": [
@@ -99,7 +117,10 @@
             "group": [
                 "上午"
             ],
-            "default_check": true
+            "default_check": true,
+            "option": [
+                "试炼之地购买次数"
+            ]
         },
         {
             "name": "王座之塔",
@@ -124,7 +145,7 @@
         {
             "name": "黑暗之门",
             "entry": "点击冒险_黑暗之门",
-            "description": "请自行升级军需官。（网页端左右侧不要留黑边）",
+            "description": "请自行升级军需官。（网页端非全屏状态下左右侧不要留黑边，否则无法识别技能，上下可留黑边）",
             "group": [
                 "上午"
             ],
@@ -182,9 +203,10 @@
                 "工具"
             ],
             "option": [
-                "自定义次数"
+                "祈愿循环"
             ],
-            "description": "祈愿时窗口尽量为9:16"
+            "description": "祈愿时窗口尽量为9:16",
+            "pipeline_override": {}
         },
         {
             "name": "兑换码",
@@ -194,11 +216,10 @@
             ],
             "pipeline_override": {},
             "default_check": false,
-            "description": "请自行填入已收集的兑换码",
+            "description": "请自行填入已收集的兑换码（仅电脑端）",
             "option": [
                 "第一个兑换码",
-                "第二个兑换码",
-                "第三个兑换码"
+                "第二个兑换码"
             ]
         },
         {
@@ -256,12 +277,68 @@
                 "购买体力药"
             ],
             "group": [
+                "周期活动"
+            ]
+        },
+        {
+            "name": "快速钓鱼",
+            "entry": "钓鱼循环",
+            "group": [
                 "工具"
+            ],
+            "option": [
+                "钓鱼循环"
+            ],
+            "description": "请手动勾选<达到新纪录时停止>。"
+        },
+        {
+            "name": "精灵斗场",
+            "entry": "识别相近的风暴战场或巨龙神殿",
+            "group": [
+                "周期活动"
+            ]
+        },
+        {
+            "name": "看广告",
+            "entry": "点击菜单_看广告",
+            "default_check": true,
+            "group": [
+                "工具"
+            ],
+            "description": "仅杂货店宝箱，月卡玩家用不上。"
+        },
+        {
+            "name": "战歌峡谷",
+            "entry": "进入部落_战歌峡谷",
+            "default_check": true,
+            "group": [
+                "上午",
+                "下午"
+            ],
+            "option": [
+                "打坑",
+                "目标档位范围",
+                "挑战战力上限"
+            ],
+            "description": "若选择打坑，请保持全屏，若无法全屏，上下不要留太多黑边。（默认不购买次数）"
+        },
+        {
+            "name": "自动保坑",
+            "entry": "开始保坑",
+            "group": [
+                "工具"
+            ],
+            "default_check": true,
+            "description": "每1分钟检测一次是否掉坑，掉坑自动找坑打坑。前4次30、35、40、45钻，5次之后都是50钻。（默认购买次数）",
+            "option": [
+                "战歌峡谷购买次数",
+                "目标档位范围",
+                "挑战战力上限"
             ]
         }
     ],
     "option": {
-        "自定义次数": {
+        "祈愿循环": {
             "type": "input",
             "cases": [],
             "default_case": [],
@@ -326,12 +403,6 @@
                     "pipeline_type": "string",
                     "verify": "^([A-Za-z]{4}[0-9]{2})?$",
                     "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
-                },
-                {
-                    "name": "兑换码<3>",
-                    "pipeline_type": "string",
-                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
-                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
                 }
             ],
             "description": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。",
@@ -341,9 +412,6 @@
                 },
                 "输入兑换码<2>": {
                     "input_text": "{兑换码<2>}"
-                },
-                "输入兑换码<3>": {
-                    "input_text": "{兑换码<3>}"
                 }
             }
         },
@@ -376,33 +444,33 @@
                 {
                     "name": "免费",
                     "pipeline_override": {
-                        "领取快速巡逻奖励": {
-                            "template": [
-                                "快速巡逻/0钻.png"
-                            ]
+                        "领取快速巡逻奖励_50钻": {
+                            "max_hit": 0
+                        },
+                        "领取快速巡逻奖励_100钻": {
+                            "max_hit": 0
                         }
                     }
                 },
                 {
                     "name": "免费+50",
                     "pipeline_override": {
-                        "领取快速巡逻奖励": {
-                            "template": [
-                                "快速巡逻/0钻.png",
-                                "快速巡逻/50钻.png"
-                            ]
+                        "领取快速巡逻奖励_50钻": {
+                            "max_hit": 1
+                        },
+                        "领取快速巡逻奖励_100钻": {
+                            "max_hit": 0
                         }
                     }
                 },
                 {
                     "name": "免费+50+100",
                     "pipeline_override": {
-                        "领取快速巡逻奖励": {
-                            "template": [
-                                "快速巡逻/0钻.png",
-                                "快速巡逻/50钻.png",
-                                "快速巡逻/100钻.png"
-                            ]
+                        "领取快速巡逻奖励_50钻": {
+                            "max_hit": 1
+                        },
+                        "领取快速巡逻奖励_100钻": {
+                            "max_hit": 1
                         }
                     }
                 }
@@ -474,8 +542,6 @@
             "inputs": [
                 {
                     "pipeline_type": "string",
-                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
-                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。",
                     "name": "兑换码<1>"
                 }
             ],
@@ -491,9 +557,7 @@
             "inputs": [
                 {
                     "name": "兑换码<2>",
-                    "pipeline_type": "string",
-                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
-                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
+                    "pipeline_type": "string"
                 }
             ],
             "pipeline_override": {
@@ -502,27 +566,3056 @@
                 }
             }
         },
-        "第三个兑换码": {
+        "钓鱼循环": {
             "type": "input",
             "cases": [],
+            "default_case": [],
             "inputs": [
                 {
-                    "name": "兑换码<3>",
-                    "pipeline_type": "string",
-                    "verify": "^([A-Za-z]{4}[0-9]{2})?$",
-                    "pattern_msg": "请输入6个字符，前4位为字母，后2位为数字（例如：Abcd12）。"
+                    "pipeline_type": "int",
+                    "name": "循环次数",
+                    "default": "100",
+                    "verify": "^[1-9]\\d*$",
+                    "pattern_msg": "请输入正整数",
+                    "password": false
                 }
             ],
             "pipeline_override": {
-                "输入兑换码<3>": {
-                    "input_text": "{兑换码<3>}"
+                "打开钓鱼": {
+                    "max_hit": "{循环次数}"
                 }
-            }
+            },
+            "description": "由于存在延迟，次数只多不少。"
+        },
+        "试炼之地钻石扫荡": {
+            "type": "checkbox",
+            "cases": [
+                {
+                    "name": "废弃矿山-英雄培养",
+                    "pipeline_override": {
+                        "进入废弃矿山_钻石扫荡": {
+                            "max_hit": 2
+                        }
+                    }
+                },
+                {
+                    "name": "远古战场-装备强化",
+                    "pipeline_override": {
+                        "进入远古战场_钻石扫荡": {
+                            "max_hit": 2
+                        }
+                    }
+                },
+                {
+                    "name": "神秘森林-雕文洗练",
+                    "pipeline_override": {
+                        "进入神秘森林_钻石扫荡": {
+                            "max_hit": 2
+                        }
+                    }
+                },
+                {
+                    "name": "月光神殿_精灵养成",
+                    "pipeline_override": {
+                        "进入月光神殿_钻石扫荡": {
+                            "max_hit": 2
+                        }
+                    }
+                },
+                {
+                    "name": "宝石矿洞-宝石进阶",
+                    "pipeline_override": {
+                        "进入宝石矿洞_钻石扫荡": {
+                            "max_hit": 2
+                        }
+                    }
+                }
+            ],
+            "min_count": 0,
+            "max_count": 5
+        },
+        "试炼之地购买次数": {
+            "type": "switch",
+            "cases": [
+                {
+                    "pipeline_override": {
+                        "是否钻石扫荡_试炼之地": {
+                            "max_hit": 1
+                        }
+                    },
+                    "name": "Yes",
+                    "option": [
+                        "试炼之地钻石扫荡"
+                    ]
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "是否钻石扫荡_试炼之地": {
+                            "max_hit": 0
+                        }
+                    }
+                }
+            ],
+            "default_case": "No"
+        },
+        "打坑": {
+            "type": "switch",
+            "description": "开：边找空坑边找可挑战坑；关：只找空坑，扫不到占训练场。（默认开）",
+            "default_case": "Yes",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "开始寻找可挑战坑": {
+                            "max_hit": 9999
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "开始寻找可挑战坑": {
+                            "max_hit": 0
+                        },
+                        "开始寻找空坑": {
+                            "on_error": [
+                                "结束寻找_是否到底"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "挑战战力上限": {
+            "type": "select",
+            "description": "只挑战战力低于该值的玩家；每 200k 一档，比较时精确匹配（纯数字=10万以下，123k/1234k 按位数分档）。",
+            "default_case": "1200k",
+            "cases": [
+                {
+                    "name": "200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^1\\d{3}k$",
+                                        "^2[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-2]\\d{3}k$",
+                                        "^3[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-3]\\d{3}k$",
+                                        "^4[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-4]\\d{3}k$",
+                                        "^5[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-5]\\d{3}k$",
+                                        "^6[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-6]\\d{3}k$",
+                                        "^7[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-7]\\d{3}k$",
+                                        "^8[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9200k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[01]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9400k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-3]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9600k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-5]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9800k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^[1-8]\\d{3}k$",
+                                        "^9[0-7]\\d{2}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "10000k",
+                    "pipeline_override": {
+                        "找低战力玩家": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^\\d{3,4}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^\\d{3,4}k$"
+                                    ]
+                                }
+                            }
+                        },
+                        "找低战力玩家_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "^\\d{4,5}$",
+                                        "^\\d{1,2}k$",
+                                        "^\\d{3,4}k$"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "目标档位范围": {
+            "type": "select",
+            "description": "格式：最高档-最低档（如 黄金-白银 = 只占领／挑战黄金、白银两档）。只占领／挑战区间内的空坑与可挑战坑；若当前所占坑低于区间最低档，会重新找坑。",
+            "default_case": "白银-青铜",
+            "cases": [
+                {
+                    "name": "王者-王者",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空王者坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "王者-荣耀",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空王者坑.png",
+                                        "战歌峡谷/空荣耀坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "王者-黄金",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空王者坑.png",
+                                        "战歌峡谷/空荣耀坑.png",
+                                        "战歌峡谷/空黄金坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "王者-白银",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空王者坑.png",
+                                        "战歌峡谷/空荣耀坑.png",
+                                        "战歌峡谷/空黄金坑.png",
+                                        "战歌峡谷/空白银坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "王者-青铜",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "王者",
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空王者坑.png",
+                                        "战歌峡谷/空荣耀坑.png",
+                                        "战歌峡谷/空黄金坑.png",
+                                        "战歌峡谷/空白银坑.png",
+                                        "战歌峡谷/空青铜坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "荣耀-荣耀",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空荣耀坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "荣耀-黄金",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空荣耀坑.png",
+                                        "战歌峡谷/空黄金坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "荣耀-白银",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空荣耀坑.png",
+                                        "战歌峡谷/空黄金坑.png",
+                                        "战歌峡谷/空白银坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "荣耀-青铜",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "荣耀",
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空荣耀坑.png",
+                                        "战歌峡谷/空黄金坑.png",
+                                        "战歌峡谷/空白银坑.png",
+                                        "战歌峡谷/空青铜坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "黄金-黄金",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空黄金坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "黄金-白银",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金",
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空黄金坑.png",
+                                        "战歌峡谷/空白银坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "黄金-青铜",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "黄金",
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空黄金坑.png",
+                                        "战歌峡谷/空白银坑.png",
+                                        "战歌峡谷/空青铜坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "白银-白银",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "白银"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空白银坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "白银-青铜",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "白银",
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空白银坑.png",
+                                        "战歌峡谷/空青铜坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "青铜-青铜",
+                    "pipeline_override": {
+                        "识别到可挑战坑类型": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_2位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "识别档位_3位": {
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "青铜"
+                                    ]
+                                }
+                            }
+                        },
+                        "有在目标档位范围内的空坑": {
+                            "recognition": {
+                                "param": {
+                                    "template": [
+                                        "战歌峡谷/空青铜坑.png"
+                                    ]
+                                }
+                            }
+                        },
+                        "是否占领着低于目标范围档位的坑": {
+                            "max_hit": 9999,
+                            "recognition": {
+                                "param": {
+                                    "expected": [
+                                        "训练场"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "战歌峡谷购买次数": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "0次",
+                    "pipeline_override": {
+                        "无挑战次数_战歌峡谷": {
+                            "next": [
+                                "结束寻找_是否到底"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3次",
+                    "pipeline_override": {
+                        "购买挑战次数": {
+                            "max_hit": 3
+                        }
+                    }
+                },
+                {
+                    "name": "5次",
+                    "pipeline_override": {
+                        "购买挑战次数": {
+                            "max_hit": 5
+                        }
+                    }
+                },
+                {
+                    "name": "10次",
+                    "pipeline_override": {
+                        "购买挑战次数": {
+                            "max_hit": 10
+                        }
+                    }
+                },
+                {
+                    "name": "20次",
+                    "pipeline_override": {
+                        "购买挑战次数": {
+                            "max_hit": 20
+                        }
+                    }
+                }
+            ],
+            "description": "自动保坑单次流程内最多购买挑战次数的次数（前4次 30/35/40/45 钻，5 次起每次 50 钻）；0次=不购买。达到上限后继续找空坑，无空坑则占领训练场。",
+            "default_case": "3次"
         }
     },
     "group": [
         {
-            "name": "上午"
+            "name": "上午",
+            "default_expand": false
         },
         {
             "name": "下午"
@@ -532,6 +3625,9 @@
         },
         {
             "name": "部落争霸"
+        },
+        {
+            "name": "周期活动"
         }
     ],
     "icon": "resource/image/几何王国.png"

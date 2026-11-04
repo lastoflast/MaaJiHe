@@ -3,17 +3,37 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792487369750,
+            "lastSyncTime": 1793597467460,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\通用函数.json",
             "savedViewport": {
-                "x": -599,
-                "y": -434,
-                "zoom": 0.99
+                "x": 284,
+                "y": -78,
+                "zoom": 0.6
             },
             "filename": "通用函数",
             "version": "v2.1.0"
+        }
+    },
+    "$__mpe_group_试炼之地_通用函数": {
+        "$__mpe_code": {
+            "position": {
+                "x": 682,
+                "y": -557
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "准备免费扫荡",
+                "准备钻石扫荡",
+                "扫荡试炼之地",
+                "确认_橙_副本1",
+                "钻石购买次数",
+                "领取奖励_两次_副本1",
+                "领取奖励_副本1"
+            ],
+            "width": 990,
+            "height": 856
         }
     },
     "$__mpe_sticker_便签_通用函数": {
@@ -22,7 +42,7 @@
                 "x": 2313,
                 "y": 1043
             },
-            "content": "可能会同时识别到，所以延迟半秒",
+            "content": "可能会同时识别到，所以延迟1秒",
             "color": "yellow",
             "width": 200,
             "height": 160
@@ -45,6 +65,9 @@
             "param": {
                 "template": [
                     "关闭.png"
+                ],
+                "threshold": [
+                    0.65
                 ]
             }
         },
@@ -64,6 +87,9 @@
             "param": {
                 "template": [
                     "关闭.png"
+                ],
+                "threshold": [
+                    0.65
                 ]
             }
         },
@@ -87,6 +113,9 @@
             "param": {
                 "template": [
                     "关闭.png"
+                ],
+                "threshold": [
+                    0.65
                 ]
             }
         },
@@ -98,6 +127,9 @@
         "next": [
             "退出界面"
         ],
+        "on_error": [
+            "啥也不做"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 2046,
@@ -105,7 +137,7 @@
             }
         }
     },
-    "准备扫荡": {
+    "准备免费扫荡": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -119,15 +151,41 @@
         },
         "timeout": 2000,
         "next": [
-            "扫荡"
+            "扫荡试炼之地"
         ],
         "on_error": [
             "关闭弹窗"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 827,
-                "y": 404
+                "x": 711,
+                "y": -503
+            }
+        }
+    },
+    "准备钻石扫荡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "难度-1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "钻石购买次数"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 708,
+                "y": -103
             }
         }
     },
@@ -139,15 +197,12 @@
             }
         }
     },
-    "扫荡": {
+    "扫荡试炼之地": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "扫荡.png"
-                ],
-                "threshold": [
-                    0.8
+                    "免费扫荡.png"
                 ]
             }
         },
@@ -163,8 +218,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1087,
-                "y": 409
+                "x": 950,
+                "y": -503
             }
         }
     },
@@ -174,7 +229,7 @@
             "param": {
                 "roi": [
                     180,
-                    800,
+                    700,
                     360,
                     1000
                 ],
@@ -199,7 +254,7 @@
             "param": {
                 "roi": [
                     180,
-                    800,
+                    700,
                     360,
                     1000
                 ],
@@ -222,7 +277,7 @@
             "param": {
                 "roi": [
                     180,
-                    800,
+                    700,
                     360,
                     1000
                 ],
@@ -262,8 +317,34 @@
         "timeout": 2000,
         "$__mpe_code": {
             "position": {
-                "x": 2051,
-                "y": 315
+                "x": 2045,
+                "y": 1263
+            }
+        }
+    },
+    "确认_橙_副本1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "扫荡试炼之地"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1192,
+                "y": -104
             }
         }
     },
@@ -284,6 +365,32 @@
             "position": {
                 "x": 2302,
                 "y": 775
+            }
+        }
+    },
+    "钻石购买次数": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钻石扫荡.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "确认_橙_副本1"
+        ],
+        "on_error": [
+            "关闭弹窗"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 950,
+                "y": -103
             }
         }
     },
@@ -356,15 +463,15 @@
         "timeout": 1000,
         "next": [
             "领取奖励_副本1",
-            "扫荡"
+            "扫荡试炼之地"
         ],
         "on_error": [
             "关闭弹窗"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 825,
-                "y": 771
+                "x": 1191,
+                "y": -504
             }
         }
     },
@@ -388,15 +495,15 @@
         },
         "timeout": 2000,
         "next": [
-            "扫荡"
+            "扫荡试炼之地"
         ],
         "on_error": [
             "关闭弹窗"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1087,
-                "y": 769
+                "x": 1432,
+                "y": -503
             }
         }
     },
@@ -463,6 +570,27 @@
             "position": {
                 "x": 1471,
                 "y": 776
+            }
+        }
+    },
+    "退出界面两次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "返回.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "repeat_delay": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 2579,
+                "y": 773
             }
         }
     }

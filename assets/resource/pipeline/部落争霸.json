@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792492106925,
+            "lastSyncTime": 1793072986273,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\部落争霸.json",
             "savedViewport": {
-                "x": -3046,
-                "y": 175,
+                "x": -3355,
+                "y": 37,
                 "zoom": 0.99
             },
             "filename": "部落争霸",
@@ -264,9 +264,7 @@
         "timeout": 2000,
         "next": [
             "[JumpBack]购买攻城令",
-            "领取免费礼包钻石"
-        ],
-        "on_error": [
+            "[JumpBack]领取免费礼包钻石",
             "关闭弹窗"
         ],
         "$__mpe_code": {

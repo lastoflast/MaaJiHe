@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792491060810,
+            "lastSyncTime": 1793681252056,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\收菜助力一条龙.json",
             "savedViewport": {
-                "x": -7248,
-                "y": -747,
-                "zoom": 0.8
+                "x": -9528,
+                "y": -1866,
+                "zoom": 0.99
             },
             "filename": "收菜助力一条龙",
             "version": "v2.1.0"
@@ -341,6 +341,9 @@
         "action": {
             "type": "Click"
         },
+        "focus": {
+            "Node.Action.Succeeded": "本轮心愿奖励兑换成功，请选择下一轮心愿奖励！"
+        },
         "next": [
             "领取奖励"
         ],
@@ -380,7 +383,7 @@
             }
         }
     },
-    "点击好友": {
+    "点击好友_收菜助力": {
         "max_hit": 1,
         "recognition": {
             "type": "TemplateMatch",
@@ -491,7 +494,7 @@
             }
         }
     },
-    "点击杂货店": {
+    "点击杂货店_收菜助力": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -524,6 +527,9 @@
             "param": {
                 "template": [
                     "求助_短.png"
+                ],
+                "threshold": [
+                    0.6
                 ]
             }
         },
@@ -682,7 +688,7 @@
                     "部落聊天.png"
                 ],
                 "threshold": [
-                    0.65
+                    0.6
                 ]
             }
         },
@@ -700,8 +706,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9692,
-                "y": 2887
+                "x": 9694,
+                "y": 2890
             }
         }
     },
@@ -770,7 +776,7 @@
         },
         "post_delay": 500,
         "next": [
-            "点击好友"
+            "点击好友_收菜助力"
         ],
         "$__mpe_code": {
             "position": {
@@ -794,8 +800,8 @@
         },
         "post_delay": 500,
         "next": [
-            "点击好友",
-            "点击杂货店"
+            "点击好友_收菜助力",
+            "点击杂货店_收菜助力"
         ],
         "$__mpe_code": {
             "position": {

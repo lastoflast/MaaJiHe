@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792492446807,
+            "lastSyncTime": 1793243585665,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\隐秘圣所.json",
             "savedViewport": {
-                "x": -2210,
-                "y": 123,
-                "zoom": 0.63
+                "x": -5730,
+                "y": -762,
+                "zoom": 1.5
             },
             "filename": "隐秘圣所",
             "version": "v2.1.0"
@@ -339,13 +339,14 @@
             "param": {
                 "roi": [
                     0,
-                    560,
+                    640,
                     720,
-                    720
+                    640
                 ],
                 "template": [
                     "隐秘圣所/传说buff.png"
                 ],
+                "count": 8,
                 "index": -1
             }
         },
@@ -368,13 +369,14 @@
             "param": {
                 "roi": [
                     0,
-                    560,
+                    640,
                     720,
-                    720
+                    640
                 ],
                 "template": [
                     "隐秘圣所/精英buff.png"
                 ],
+                "count": 8,
                 "index": -1
             }
         },
@@ -386,8 +388,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6089,
-                "y": 1066
+                "x": 6090,
+                "y": 1035
             }
         }
     },
@@ -423,6 +425,9 @@
             "param": {
                 "template": [
                     "知道了.png"
+                ],
+                "threshold": [
+                    0.65
                 ]
             }
         },
@@ -538,11 +543,12 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "隐秘圣所/圣所_非boss.png",
-                    "隐秘圣所/圣所_小boss.png",
-                    "隐秘圣所/圣所_大boss.png"
+                    "隐秘圣所/圣所_非boss.png"
                 ],
                 "green_mask": true,
+                "threshold": [
+                    0.8
+                ],
                 "order_by": "Horizontal",
                 "index": -1
             }

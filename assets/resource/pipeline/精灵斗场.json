@@ -1,0 +1,366 @@
+{
+    "$__mpe_config_精灵斗场": {
+        "$__mpe_code": {
+            "prefix": "",
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\精灵斗场.json",
+            "lastSyncTime": 1793596213694,
+            "coordinateMode": "absolute-v1",
+            "savedViewport": {
+                "x": -259,
+                "y": -2,
+                "zoom": 0.94
+            },
+            "filename": "精灵斗场",
+            "version": "v2.1.0"
+        }
+    },
+    "识别相近的风暴战场或巨龙神殿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "巨龙神殿.png",
+                    "风暴战场.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -85,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "进入精灵斗场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -6,
+                "y": 294
+            }
+        }
+    },
+    "进入精灵斗场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "精灵斗场_暗.png",
+                    "精灵斗场_亮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "参加斗蛐蛐"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 265,
+                "y": 293
+            }
+        }
+    },
+    "参加斗蛐蛐": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "参加.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "自动上阵中",
+            "设置自动上阵",
+            "退出比赛中的精灵赛场",
+            "关闭弹窗_精灵斗场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 530,
+                "y": 293
+            }
+        }
+    },
+    "设置自动上阵": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "精灵斗场/自动上阵.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "上阵顺序不是随机",
+            "开始自动上阵"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 790,
+                "y": 590
+            }
+        }
+    },
+    "打开上阵顺序下拉框": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    200,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "从高到低",
+                    "从低到高"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "选择随机选择"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1353,
+                "y": 592
+            }
+        }
+    },
+    "上阵顺序不是随机": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    200,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "随机选择"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "打开上阵顺序下拉框"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1090,
+                "y": 590
+            }
+        }
+    },
+    "选择随机选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    200,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "随机选择"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "开始自动上阵"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1612,
+                "y": 594
+            }
+        }
+    },
+    "开始自动上阵": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]关闭弹窗",
+            "[JumpBack]退出界面",
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1910,
+                "y": 593
+            }
+        }
+    },
+    "$__mpe_external_退出界面_精灵斗场": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2253,
+                "y": 681
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗_精灵斗场": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2256,
+                "y": 588
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_精灵斗场": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2250,
+                "y": 771
+            }
+        }
+    },
+    "自动上阵中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    900,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "自动上阵中"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]退出界面",
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 785,
+                "y": 289
+            }
+        }
+    },
+    "$__mpe_external_停止当前任务_精灵斗场": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1389,
+                "y": 350
+            }
+        }
+    },
+    "退出比赛中的精灵赛场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "返回.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 0,
+        "timeout": 1000,
+        "next": [
+            "确定退出"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 791,
+                "y": 950
+            }
+        }
+    },
+    "确定退出": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "参加斗蛐蛐"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1050,
+                "y": 951
+            }
+        }
+    },
+    "关闭弹窗_精灵斗场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "关闭.png"
+                ],
+                "threshold": [
+                    0.65
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "自动上阵中",
+            "设置自动上阵"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1351,
+                "y": 951
+            }
+        }
+    }
+}

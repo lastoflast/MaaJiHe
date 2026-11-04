@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792487317505,
+            "lastSyncTime": 1793595982417,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\使用兑换码.json",
             "savedViewport": {
-                "x": -393,
-                "y": 518,
-                "zoom": 0.99
+                "x": -81,
+                "y": 21,
+                "zoom": 0.94
             },
             "filename": "使用兑换码",
             "version": "v2.1.0"
@@ -139,7 +139,6 @@
         "next": [
             "点击请输入兑换码<1>",
             "点击请输入兑换码<2>",
-            "点击请输入兑换码<3>",
             "[JumpBack]关闭弹窗",
             "停止当前任务"
         ],
@@ -245,30 +244,6 @@
             }
         }
     },
-    "点击请输入兑换码<3>": {
-        "max_hit": 1,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "请输入兑换码.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 500,
-        "next": [
-            "输入兑换码<3>"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 810,
-                "y": 710
-            }
-        }
-    },
     "确认兑换码": {
         "recognition": {
             "type": "OCR",
@@ -329,23 +304,6 @@
             "position": {
                 "x": 1071,
                 "y": 370
-            }
-        }
-    },
-    "输入兑换码<3>": {
-        "action": {
-            "type": "InputText",
-            "param": {
-                "input_text": ""
-            }
-        },
-        "next": [
-            "确认兑换码"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1071,
-                "y": 711
             }
         }
     }

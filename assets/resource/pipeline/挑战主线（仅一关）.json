@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792489240231,
+            "lastSyncTime": 1792652802210,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\挑战主线（仅一关）.json",
             "savedViewport": {
-                "x": -3913,
-                "y": -579,
+                "x": -5575,
+                "y": -1016,
                 "zoom": 1.57
             },
             "filename": "挑战主线（仅一关）",
@@ -35,16 +35,16 @@
     "$__mpe_external_点击任意关闭两次_挑战主线（仅一关）": {
         "$__mpe_code": {
             "position": {
-                "x": 3091,
-                "y": 973
+                "x": 3089,
+                "y": 1010
             }
         }
     },
     "$__mpe_external_退出界面_挑战主线（仅一关）": {
         "$__mpe_code": {
             "position": {
-                "x": 3611,
-                "y": 791
+                "x": 3870,
+                "y": 750
             }
         }
     },
@@ -71,7 +71,7 @@
             }
         }
     },
-    "下一章": {
+    "下一章_始": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -94,6 +94,18 @@
             }
         }
     },
+    "合分节点_主线": {
+        "next": [
+            "进入下一关",
+            "结束一整章"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3350,
+                "y": 749
+            }
+        }
+    },
     "场外识别券数量_挑战主线前": {
         "recognition": {
             "type": "TemplateMatch",
@@ -113,7 +125,7 @@
         ],
         "on_error": [
             "点击主线",
-            "下一章"
+            "下一章_始"
         ],
         "$__mpe_code": {
             "position": {
@@ -174,14 +186,42 @@
         "next": [
             "继续",
             "领取奖励_挑战主线",
-            "进入下一关",
             "点击任意关闭两次",
-            "等待5秒_主线"
+            "等待5秒_主线",
+            "合分节点_主线"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 2830,
                 "y": 490
+            }
+        }
+    },
+    "结束一整章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
+                "expected": [
+                    "点击任意"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "下一章_终"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3610,
+                "y": 1010
             }
         }
     },
@@ -209,29 +249,10 @@
     },
     "进入下一关": {
         "recognition": {
-            "type": "Or",
+            "type": "TemplateMatch",
             "param": {
-                "any_of": [
-                    {
-                        "recognition": {
-                            "param": {
-                                "template": [
-                                    "下一关.png"
-                                ]
-                            },
-                            "type": "TemplateMatch"
-                        }
-                    },
-                    {
-                        "recognition": {
-                            "param": {
-                                "expected": [
-                                    "下一关"
-                                ]
-                            },
-                            "type": "OCR"
-                        }
-                    }
+                "template": [
+                    "下一关.png"
                 ]
             }
         },
@@ -243,7 +264,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3349,
+                "x": 3609,
                 "y": 750
             }
         }
@@ -267,7 +288,7 @@
             "type": "Click"
         },
         "next": [
-            "进入下一关"
+            "合分节点_主线"
         ],
         "$__mpe_code": {
             "position": {
@@ -276,16 +297,24 @@
             }
         }
     },
-    "$__mpe_sticker_便签_挑战主线（仅一关）": {
+    "下一章_终": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "下一章.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 5000,
         "$__mpe_code": {
             "position": {
-                "x": 3354,
-                "y": 949
-            },
-            "content": "这里为什么要双重识别来着的？",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
+                "x": 3871,
+                "y": 1010
+            }
         }
     }
 }

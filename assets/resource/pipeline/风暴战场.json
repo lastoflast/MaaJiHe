@@ -1,0 +1,236 @@
+{
+    "$__mpe_config_风暴战场": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1793163417520,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\风暴战场.json",
+            "savedViewport": {
+                "x": -2906,
+                "y": -162,
+                "zoom": 0.94
+            },
+            "filename": "风暴战场",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_anchor_征战风暴战场_风暴战场": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5110,
+                "y": 690
+            }
+        }
+    },
+    "$__mpe_external_退出界面_风暴战场": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4331,
+                "y": 951
+            }
+        }
+    },
+    "开始匹配_风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始匹配.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "等待5秒_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4329,
+                "y": 688
+            }
+        }
+    },
+    "滑动到风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "巨龙神殿_右.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "识别巨龙神殿",
+                "duration": [
+                    100
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "进入风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3811,
+                "y": 1071
+            }
+        }
+    },
+    "点击任意关闭_风暴战场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    800,
+                    360,
+                    1000
+                ],
+                "expected": [
+                    "点击任意"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]征战风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4850,
+                "y": 691
+            }
+        }
+    },
+    "等待5秒_风暴战场": {
+        "max_hit": 100,
+        "pre_delay": 2500,
+        "post_delay": 2500,
+        "timeout": 2000,
+        "next": [
+            "点击任意关闭_风暴战场",
+            "等待5秒_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4590,
+                "y": 689
+            }
+        }
+    },
+    "识别入场券数量": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    720,
+                    360,
+                    800
+                ],
+                "expected": [
+                    "0/5"
+                ]
+            }
+        },
+        "inverse": true,
+        "timeout": 2000,
+        "next": [
+            "开始匹配_风暴战场"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4071,
+                "y": 690
+            }
+        }
+    },
+    "识别巨龙神殿": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "巨龙神殿.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "滑动到风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3551,
+                "y": 1071
+            }
+        }
+    },
+    "进入风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "风暴战场.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "稳定节点_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3548,
+                "y": 686
+            }
+        }
+    },
+    "风暴战场": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "进入风暴战场",
+            "识别巨龙神殿"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3277,
+                "y": 967
+            }
+        }
+    },
+    "稳定节点_风暴战场": {
+        "anchor": "征战风暴战场",
+        "timeout": 2000,
+        "next": [
+            "识别入场券数量"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3810,
+                "y": 689
+            }
+        }
+    }
+}

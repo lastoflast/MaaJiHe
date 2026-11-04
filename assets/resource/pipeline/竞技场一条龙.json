@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792491846191,
+            "lastSyncTime": 1793803734512,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\竞技场一条龙.json",
             "savedViewport": {
-                "x": -1661,
-                "y": -1050,
-                "zoom": 1.57
+                "x": -2642,
+                "y": -873,
+                "zoom": 2.5
             },
             "filename": "竞技场一条龙",
             "version": "v2.1.0"
@@ -35,17 +35,23 @@
     "$__mpe_external_退出界面_竞技场一条龙": {
         "$__mpe_code": {
             "position": {
-                "x": 1577,
-                "y": 907
+                "x": 1870,
+                "y": 11
             }
         }
     },
     "$__mpe_external_领取奖励_竞技场一条龙": {
         "$__mpe_code": {
             "position": {
-                "x": 1833,
-                "y": 588
-            }
+                "x": 2080,
+                "y": 1082
+            },
+            "extra_positions": [
+                {
+                    "x": 1870,
+                    "y": -129
+                }
+            ]
         }
     },
     "一键上阵_竞技场": {
@@ -134,22 +140,21 @@
             }
         },
         "anchor": "挑战竞技场",
-        "timeout": 2000,
+        "timeout": 250,
         "next": [
-            "场内识别券数量"
+            "场内识别券数量_图片"
         ],
         "on_error": [
-            "[JumpBack]检查竞技场宝箱",
-            "退出界面"
+            "挑战竞技场假人"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1063,
-                "y": 294
+                "x": 1062,
+                "y": 292
             }
         }
     },
-    "场内识别券数量": {
+    "场内识别券数量_图片": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -157,18 +162,42 @@
                     "0竞技券.png"
                 ],
                 "threshold": [
-                    0.95
+                    0.9
                 ]
             }
         },
-        "inverse": true,
+        "timeout": 250,
         "next": [
+            "场内识别券数量_文字"
+        ],
+        "on_error": [
             "挑战竞技场假人"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1319,
-                "y": 292
+                "x": 1087,
+                "y": -130
+            }
+        }
+    },
+    "场内识别券数量_文字": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": "场内识别券数量_图片",
+                "expected": [
+                    "0"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]检查竞技场宝箱",
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1349,
+                "y": -129
             }
         }
     },
@@ -211,8 +240,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1576,
-                "y": 290
+                "x": 1577,
+                "y": 291
             }
         }
     },
@@ -254,12 +283,12 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1573,
-                "y": 584
+                "x": 1610,
+                "y": -130
             }
         }
     },
-    "点击任意关闭_副本1": {
+    "点击任意关闭_竞技场": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -355,6 +384,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "timeout": 2000,
         "next": [
             "领取奖励",
@@ -387,6 +417,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "timeout": 2000,
         "next": [
             "领取奖励_副本a",
@@ -405,7 +436,7 @@
         "post_delay": 2500,
         "timeout": 2000,
         "next": [
-            "点击任意关闭_副本1",
+            "点击任意关闭_竞技场",
             "等待5秒_竞技场"
         ],
         "$__mpe_code": {

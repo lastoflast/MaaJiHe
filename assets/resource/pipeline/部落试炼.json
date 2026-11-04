@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792498913390,
+            "lastSyncTime": 1793419191850,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\部落试炼.json",
             "savedViewport": {
-                "x": -1723,
-                "y": -153,
-                "zoom": 0.99
+                "x": -2570,
+                "y": -510,
+                "zoom": 1.27
             },
             "filename": "部落试炼",
             "version": "v2.1.0"
@@ -193,6 +193,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "next": [
             "挑战部落试炼"
         ],

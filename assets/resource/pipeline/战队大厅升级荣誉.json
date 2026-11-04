@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792487617197,
+            "lastSyncTime": 1792585608441,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战队大厅升级荣誉.json",
             "savedViewport": {
-                "x": -2221,
-                "y": 15,
-                "zoom": 0.99
+                "x": -1856,
+                "y": 30,
+                "zoom": 0.94
             },
             "filename": "战队大厅升级荣誉",
             "version": "v2.1.0"
@@ -55,7 +55,7 @@
             "白银勋章不足"
         ],
         "on_error": [
-            "识别白银勋章数量"
+            "中继节点_战队大厅"
         ],
         "$__mpe_code": {
             "position": {
@@ -84,7 +84,7 @@
             "白银勋章不足"
         ],
         "on_error": [
-            "识别白银勋章数量"
+            "中继节点_战队大厅"
         ],
         "$__mpe_code": {
             "position": {
@@ -108,12 +108,12 @@
         "post_delay": 500,
         "timeout": 2000,
         "next": [
-            "识别白银勋章数量"
+            "中继节点_战队大厅"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2624,
-                "y": 358
+                "x": 2370,
+                "y": 364
             }
         }
     },
@@ -136,8 +136,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2364,
-                "y": 358
+                "x": 2110,
+                "y": 364
             }
         }
     },
@@ -243,7 +243,7 @@
             "黄金勋章不足"
         ],
         "on_error": [
-            "识别白银勋章数量"
+            "中继节点_战队大厅"
         ],
         "$__mpe_code": {
             "position": {
@@ -274,6 +274,21 @@
             "position": {
                 "x": 3428,
                 "y": 773
+            }
+        }
+    },
+    "中继节点_战队大厅": {
+        "timeout": 2000,
+        "next": [
+            "识别白银勋章数量"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2629,
+                "y": 364
             }
         }
     }

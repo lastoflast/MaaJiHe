@@ -1,0 +1,1336 @@
+{
+    "$__mpe_config_战歌峡谷": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1793808640303,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战歌峡谷.json",
+            "savedViewport": {
+                "x": -3340,
+                "y": 64,
+                "zoom": 0.99
+            },
+            "filename": "战歌峡谷",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_external_点击任意关闭_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7690,
+                "y": 1417
+            }
+        }
+    },
+    "$__mpe_external_领取奖励_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4670,
+                "y": 1050
+            },
+            "extra_positions": [
+                {
+                    "x": 7549,
+                    "y": 751
+                }
+            ]
+        }
+    },
+    "占领": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/占领.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]确认收益_换坑",
+            "[Anchor]开始保坑",
+            "[JumpBack]退出界面",
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7030,
+                "y": 750
+            }
+        }
+    },
+    "失败_战歌峡谷": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "失败"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]点击任意关闭",
+            "结束寻找_是否到底",
+            "无挑战次数_战歌峡谷"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7031,
+                "y": 1830
+            }
+        }
+    },
+    "开始保坑": {
+        "anchor": "开始保坑",
+        "post_delay": 60000,
+        "timeout": 3000,
+        "next": [
+            "确认收益_保坑",
+            "是否占领训练场_结束保坑",
+            "开始保坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3631,
+                "y": 451
+            }
+        }
+    },
+    "开始战斗_战歌峡谷": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始战斗.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "等待5秒_战歌峡谷"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6510,
+                "y": 1550
+            }
+        }
+    },
+    "战场正在保护中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "战场正在保护中"
+                ]
+            }
+        },
+        "next": [
+            "找低战力玩家_2位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5830,
+                "y": 1830
+            }
+        }
+    },
+    "战歌峡谷": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "战歌峡谷"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "确认收益_进入",
+            "是否未占领",
+            "休战中",
+            "是否占领着低于目标范围档位的坑",
+            "退出界面两次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4150,
+                "y": 1051
+            }
+        }
+    },
+    "找低战力玩家": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    100,
+                    340,
+                    520,
+                    1000
+                ],
+                "expected": [
+                    "^\\d{4,5}$",
+                    "^\\dk$",
+                    "^\\d{2}k$",
+                    "^1[01]\\d{2}k$"
+                ],
+                "order_by": "Expected",
+                "index": 0
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "非所在部落成员/本人/仇敌"
+        ],
+        "on_error": [
+            "找低战力玩家_2位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5310,
+                "y": 1550
+            }
+        }
+    },
+    "开始找坑": {
+        "next": [
+            "开始寻找空坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4670,
+                "y": 1210
+            }
+        }
+    },
+    "挑战其它玩家": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/挑战战歌峡谷.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 8000,
+        "next": [
+            "开始战斗_战歌峡谷"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6090,
+                "y": 1550
+            }
+        }
+    },
+    "无挑战次数_战歌峡谷": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    640
+                ],
+                "expected": [
+                    "挑战次数 0"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "购买挑战次数"
+        ],
+        "on_error": [
+            "结束寻找_是否到底"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5650,
+                "y": 950
+            }
+        }
+    },
+    "是否未占领": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    500
+                ],
+                "expected": [
+                    "未占领"
+                ]
+            }
+        },
+        "next": [
+            "开始找坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4410,
+                "y": 1311
+            }
+        }
+    },
+    "确认收益_进入": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]领取奖励",
+            "开始找坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4411,
+                "y": 1050
+            }
+        }
+    },
+    "确认收益_保坑": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]领取奖励",
+            "是否掉坑_保坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3890,
+                "y": 130
+            }
+        }
+    },
+    "等待5秒_战歌峡谷": {
+        "max_hit": 30,
+        "pre_delay": 2500,
+        "post_delay": 2500,
+        "timeout": 2000,
+        "next": [
+            "胜利_战歌峡谷",
+            "失败_战歌峡谷",
+            "等待5秒_战歌峡谷"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6770,
+                "y": 1550
+            }
+        }
+    },
+    "胜利_战歌峡谷": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "胜利"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]点击任意关闭",
+            "[JumpBack]确认收益_换坑",
+            "[Anchor]开始保坑",
+            "[JumpBack]退出界面",
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7030,
+                "y": 1550
+            }
+        }
+    },
+    "训练场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/训练场.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 3000,
+        "next": [
+            "占领"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6770,
+                "y": 750
+            }
+        }
+    },
+    "进入部落_战歌峡谷": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "部落.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "战歌峡谷"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3890,
+                "y": 1050
+            }
+        }
+    },
+    "$__mpe_external_退出界面_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7690,
+                "y": 1088
+            },
+            "extra_positions": [
+                {
+                    "x": 4671,
+                    "y": 750
+                }
+            ]
+        }
+    },
+    "$__mpe_external_啥也不做_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7690,
+                "y": 1250
+            }
+        }
+    },
+    "开始寻找空坑": {
+        "timeout": 1000,
+        "next": [
+            "有在目标档位范围内的空坑"
+        ],
+        "on_error": [
+            "开始寻找可挑战坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5050,
+                "y": 750
+            }
+        }
+    },
+    "上滑_找低档坑": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    850
+                ],
+                "end": [
+                    [
+                        360,
+                        350
+                    ]
+                ],
+                "duration": 400
+            }
+        },
+        "post_wait_freezes": 3000,
+        "next": [
+            "开始寻找空坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5310,
+                "y": 1110
+            }
+        }
+    },
+    "下滑_直到顶部": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    350
+                ],
+                "end": [
+                    [
+                        360,
+                        850
+                    ]
+                ],
+                "duration": 400
+            }
+        },
+        "next": [
+            "识别到两个桶代表到顶",
+            "下滑_直到顶部"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4670,
+                "y": 1550
+            }
+        }
+    },
+    "开始寻找可挑战坑": {
+        "timeout": 1000,
+        "next": [
+            "无挑战次数_战歌峡谷",
+            "找低战力玩家"
+        ],
+        "on_error": [
+            "结束寻找_是否到底"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5050,
+                "y": 1550
+            }
+        }
+    },
+    "结束寻找_是否到底": {
+        "timeout": 2000,
+        "next": [
+            "未识别到矿镐代表未到底"
+        ],
+        "on_error": [
+            "识别到矿镐代表到底"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6510,
+                "y": 2170
+            }
+        }
+    },
+    "识别到可挑战坑类型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    250,
+                    720,
+                    600
+                ],
+                "expected": [
+                    "白银",
+                    "青铜"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "挑战其它玩家"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5830,
+                "y": 1551
+            }
+        }
+    },
+    "关闭弹窗_换2位": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/取消挑战.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "找低战力玩家_2位"
+        ],
+        "on_error": [
+            "结束寻找_是否到底"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5050,
+                "y": 2030
+            }
+        }
+    },
+    "找低战力玩家_2位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    100,
+                    340,
+                    520,
+                    1000
+                ],
+                "expected": [
+                    "^\\d{4,5}$",
+                    "^\\dk$",
+                    "^\\d{2}k$",
+                    "^1[01]\\d{2}k$"
+                ],
+                "order_by": "Expected",
+                "index": 1
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "非所在部落成员/本人/仇敌_2位"
+        ],
+        "on_error": [
+            "找低战力玩家_3位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5310,
+                "y": 2030
+            }
+        }
+    },
+    "识别档位_2位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    -720,
+                    250,
+                    720,
+                    600
+                ],
+                "expected": [
+                    "白银",
+                    "青铜"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "挑战其它玩家"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5830,
+                "y": 2029
+            }
+        }
+    },
+    "关闭弹窗_换3位": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/取消挑战.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "找低战力玩家_3位"
+        ],
+        "on_error": [
+            "结束寻找_是否到底"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5051,
+                "y": 2511
+            }
+        }
+    },
+    "找低战力玩家_3位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    100,
+                    340,
+                    520,
+                    1000
+                ],
+                "expected": [
+                    "^\\d{4,5}$",
+                    "^\\dk$",
+                    "^\\d{2}k$",
+                    "^1[01]\\d{2}k$"
+                ],
+                "order_by": "Expected",
+                "index": 2
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": true,
+                "target_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "非所在部落成员/本人/仇敌_3位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5311,
+                "y": 2510
+            }
+        }
+    },
+    "识别档位_3位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    720,
+                    600
+                ],
+                "roi_offset": [
+                    0,
+                    250,
+                    0,
+                    0
+                ],
+                "expected": [
+                    "白银",
+                    "青铜"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "挑战其它玩家"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5830,
+                "y": 2510
+            }
+        }
+    },
+    "休战中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "休战中"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]退出界面",
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4411,
+                "y": 751
+            }
+        }
+    },
+    "$__mpe_external_退出界面两次_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4151,
+                "y": 1411
+            }
+        }
+    },
+    "识别到两个桶代表到顶": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/两个桶.png"
+                ]
+            }
+        },
+        "timeout": 1200,
+        "next": [
+            "开始找坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4670,
+                "y": 1830
+            }
+        }
+    },
+    "未识别到矿镐代表未到底": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/矿镐.png"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "上滑_找低档坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5050,
+                "y": 1110
+            }
+        }
+    },
+    "$__mpe_external_停止当前任务_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4670,
+                "y": 850
+            }
+        }
+    },
+    "是否占领着低于目标范围档位的坑": {
+        "max_hit": 9999,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    500
+                ],
+                "expected": [
+                    "训练场"
+                ]
+            }
+        },
+        "next": [
+            "下滑_直到顶部"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4410,
+                "y": 1550
+            }
+        }
+    },
+    "确认收益_换坑": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]领取奖励",
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7290,
+                "y": 750
+            }
+        }
+    },
+    "有在目标档位范围内的空坑": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/空白银坑.png",
+                    "战歌峡谷/空青铜坑.png"
+                ],
+                "order_by": "Vertical"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "占领"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5310,
+                "y": 750
+            }
+        }
+    },
+    "$__mpe_sticker_便签_战歌峡谷": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5536,
+                "y": 1250
+            },
+            "content": "由于滑动中途停顿找坑，需要添加post_wait_freezes",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "是否未占领_副本1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    500
+                ],
+                "expected": [
+                    "未占领"
+                ]
+            }
+        },
+        "next": [
+            "训练场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6510,
+                "y": 750
+            }
+        }
+    },
+    "战场正在保护中_2位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "战场正在保护中"
+                ]
+            }
+        },
+        "next": [
+            "找低战力玩家_3位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5830,
+                "y": 2310
+            }
+        }
+    },
+    "战场正在保护中_3位": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    180,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "战场正在保护中"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5830,
+                "y": 2790
+            }
+        }
+    },
+    "非所在部落成员/本人/仇敌": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": "找低战力玩家",
+                "roi_offset": [
+                    0,
+                    -36,
+                    0,
+                    9
+                ],
+                "lower": [
+                    [
+                        74,
+                        74,
+                        144
+                    ]
+                ],
+                "upper": [
+                    [
+                        134,
+                        134,
+                        243
+                    ]
+                ],
+                "count": 50
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "战场正在保护中",
+            "识别到可挑战坑类型"
+        ],
+        "on_error": [
+            "关闭弹窗_换2位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5571,
+                "y": 1550
+            }
+        }
+    },
+    "非所在部落成员/本人/仇敌_2位": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": "找低战力玩家_2位",
+                "roi_offset": [
+                    0,
+                    -36,
+                    0,
+                    9
+                ],
+                "lower": [
+                    [
+                        74,
+                        74,
+                        144
+                    ]
+                ],
+                "upper": [
+                    [
+                        134,
+                        134,
+                        243
+                    ]
+                ],
+                "count": 50
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "战场正在保护中_2位",
+            "识别档位_2位"
+        ],
+        "on_error": [
+            "关闭弹窗_换3位"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5570,
+                "y": 2030
+            }
+        }
+    },
+    "非所在部落成员/本人/仇敌_3位": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    100,
+                    340,
+                    520,
+                    1000
+                ],
+                "roi_offset": [
+                    0,
+                    -36,
+                    0,
+                    9
+                ],
+                "lower": [
+                    [
+                        74,
+                        74,
+                        144
+                    ]
+                ],
+                "upper": [
+                    [
+                        134,
+                        134,
+                        243
+                    ]
+                ],
+                "count": 50
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "timeout": 2000,
+        "next": [
+            "战场正在保护中_3位",
+            "识别档位_3位"
+        ],
+        "on_error": [
+            "关闭弹窗_结束识别"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5570,
+                "y": 2510
+            }
+        }
+    },
+    "关闭弹窗_结束识别": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/取消挑战.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "结束寻找_是否到底"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6090,
+                "y": 2670
+            }
+        }
+    },
+    "识别到矿镐代表到底": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "战歌峡谷/矿镐.png"
+                ]
+            }
+        },
+        "timeout": 2000,
+        "next": [
+            "是否未占领_副本1"
+        ],
+        "on_error": [
+            "[JumpBack]退出界面",
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6250,
+                "y": 750
+            }
+        }
+    },
+    "是否占领训练场_结束保坑": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    500
+                ],
+                "expected": [
+                    "训练场"
+                ]
+            }
+        },
+        "anchor": {
+            "开始保坑": ""
+        },
+        "timeout": 1200,
+        "next": [
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3890,
+                "y": 450
+            }
+        }
+    },
+    "是否掉坑_保坑": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    500
+                ],
+                "expected": [
+                    "未占领"
+                ]
+            }
+        },
+        "timeout": 1200,
+        "next": [
+            "下滑_直到顶部"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4150,
+                "y": 130
+            }
+        }
+    },
+    "购买挑战次数": {
+        "max_hit": 0,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    360,
+                    640
+                ],
+                "template": [
+                    "战歌峡谷/购买挑战次数_战歌峡谷.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "timeout": 2000,
+        "next": [
+            "确认购买挑战次数"
+        ],
+        "on_error": [
+            "开始寻找可挑战坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5650,
+                "y": 530
+            }
+        }
+    },
+    "确认购买挑战次数": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "开始寻找可挑战坑"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5950,
+                "y": 530
+            }
+        }
+    }
+}

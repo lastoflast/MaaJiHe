@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792208799592,
+            "lastSyncTime": 1793511311339,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速巡逻.json",
             "savedViewport": {
-                "x": -1879,
-                "y": -516,
-                "zoom": 1.5
+                "x": -694,
+                "y": -441,
+                "zoom": 0.94
             },
             "filename": "快速巡逻",
             "version": "v2.1.0"
@@ -19,8 +19,8 @@
     "$__mpe_external_关闭弹窗两次_快速巡逻": {
         "$__mpe_code": {
             "position": {
-                "x": 2254,
-                "y": 989
+                "x": 2003,
+                "y": 999
             }
         }
     },
@@ -35,16 +35,16 @@
     "$__mpe_external_啥也不做_快速巡逻": {
         "$__mpe_code": {
             "position": {
-                "x": 2493,
-                "y": 839
+                "x": 2686,
+                "y": 1058
             }
         }
     },
     "$__mpe_external_领取奖励两次_快速巡逻": {
         "$__mpe_code": {
             "position": {
-                "x": 2497,
-                "y": 612
+                "x": 2678,
+                "y": 786
             }
         }
     },
@@ -89,7 +89,9 @@
         "post_delay": 500,
         "timeout": 2000,
         "next": [
-            "[JumpBack]领取快速巡逻奖励"
+            "[JumpBack]领取快速巡逻奖励_0钻",
+            "[JumpBack]领取快速巡逻奖励_50钻",
+            "[JumpBack]领取快速巡逻奖励_100钻"
         ],
         "on_error": [
             "关闭弹窗两次"
@@ -125,16 +127,14 @@
             }
         }
     },
-    "领取快速巡逻奖励": {
-        "max_hit": 4,
+    "领取快速巡逻奖励_0钻": {
+        "max_hit": 2,
         "recognition": {
-            "type": "FeatureMatch",
+            "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "快速巡逻/0钻.png",
-                    "快速巡逻/50钻.png"
-                ],
-                "count": 16
+                    "快速巡逻/0钻.png"
+                ]
             }
         },
         "action": {
@@ -151,6 +151,60 @@
             "position": {
                 "x": 2250,
                 "y": 609
+            }
+        }
+    },
+    "领取快速巡逻奖励_100钻": {
+        "max_hit": 0,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "快速巡逻/100钻.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励两次"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2251,
+                "y": 1350
+            }
+        }
+    },
+    "领取快速巡逻奖励_50钻": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "快速巡逻/50钻.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 2000,
+        "next": [
+            "领取奖励两次"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2250,
+                "y": 971
             }
         }
     }

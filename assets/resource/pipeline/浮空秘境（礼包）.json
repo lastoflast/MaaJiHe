@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792491193333,
+            "lastSyncTime": 1793604488523,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\浮空秘境（礼包）.json",
             "savedViewport": {
-                "x": -8448,
-                "y": -1373,
-                "zoom": 1.57
+                "x": -7408,
+                "y": -1260,
+                "zoom": 1.26
             },
             "filename": "浮空秘境（礼包）",
             "version": "v2.1.0"
@@ -106,7 +106,7 @@
                     "购买体力药.png"
                 ],
                 "threshold": [
-                    0.85
+                    0.88
                 ]
             }
         },

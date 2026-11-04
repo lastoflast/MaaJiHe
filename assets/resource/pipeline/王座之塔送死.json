@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792491305150,
+            "lastSyncTime": 1793609241451,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\王座之塔送死.json",
             "savedViewport": {
-                "x": -3121,
-                "y": -92,
-                "zoom": 1.57
+                "x": -1946,
+                "y": 186,
+                "zoom": 1.26
             },
             "filename": "王座之塔送死",
             "version": "v2.1.0"
@@ -21,6 +21,14 @@
             "position": {
                 "x": 1751,
                 "y": 510
+            }
+        }
+    },
+    "$__mpe_external_关闭弹窗并准备退出界面_王座之塔送死": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2517,
+                "y": 851
             }
         }
     },
@@ -46,6 +54,18 @@
                 "x": 2010,
                 "y": 510
             }
+        }
+    },
+    "$__mpe_sticker__王座之塔送死": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2711,
+                "y": 851
+            },
+            "content": "可能为券为0的情况",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
         }
     },
     "已达上限_王座之塔": {
@@ -111,7 +131,8 @@
             "开始战斗_王座之塔"
         ],
         "on_error": [
-            "已达上限_王座之塔"
+            "已达上限_王座之塔",
+            "关闭弹窗并准备退出界面"
         ],
         "$__mpe_code": {
             "position": {
@@ -155,6 +176,7 @@
                 "template": [
                     "0挑战券.png"
                 ],
+                "green_mask": true,
                 "threshold": [
                     0.95
                 ]
