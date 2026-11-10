@@ -3,17 +3,40 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793602457672,
+            "lastSyncTime": 1793609033995,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\快速钓鱼.json",
             "savedViewport": {
-                "x": -1253,
-                "y": -779,
+                "x": -1343,
+                "y": -1368,
                 "zoom": 0.79
             },
             "filename": "快速钓鱼",
             "version": "v2.1.0"
+        }
+    },
+    "展开订单": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "钓鱼/在渔场2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "每日订单"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2608,
+                "y": 2310
+            }
         }
     },
     "$__mpe_anchor_继续自动钓鱼_快速钓鱼": {
@@ -180,8 +203,12 @@
             "type": "Click"
         },
         "post_delay": 500,
+        "timeout": 1000,
         "next": [
             "每日订单"
+        ],
+        "on_error": [
+            "展开订单"
         ],
         "$__mpe_code": {
             "position": {
@@ -342,8 +369,12 @@
                 ]
             }
         },
+        "timeout": 1000,
         "next": [
             "每日订单"
+        ],
+        "on_error": [
+            "展开订单"
         ],
         "$__mpe_code": {
             "position": {

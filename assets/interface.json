@@ -140,7 +140,8 @@
             "group": [
                 "上午"
             ],
-            "default_check": true
+            "default_check": true,
+            "description": "若识别不出技能，请尽量拉大窗口。"
         },
         {
             "name": "黑暗之门",

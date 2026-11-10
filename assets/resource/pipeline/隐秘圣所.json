@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793243585665,
+            "lastSyncTime": 1794286296893,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\隐秘圣所.json",
             "savedViewport": {
-                "x": -5730,
-                "y": -762,
-                "zoom": 1.5
+                "x": -1895,
+                "y": 58,
+                "zoom": 0.63
             },
             "filename": "隐秘圣所",
-            "version": "v2.1.0"
+            "version": "v2.1.1"
         }
     },
     "$__mpe_external_关闭弹窗_隐秘圣所": {
@@ -335,7 +335,7 @@
     },
     "替换传说buff": {
         "recognition": {
-            "type": "FeatureMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
                     0,
@@ -344,9 +344,8 @@
                     640
                 ],
                 "template": [
-                    "隐秘圣所/传说buff.png"
+                    "隐秘圣所/传说buff_小.png"
                 ],
-                "count": 8,
                 "index": -1
             }
         },
@@ -365,7 +364,7 @@
     },
     "替换精英buff": {
         "recognition": {
-            "type": "FeatureMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
                     0,
@@ -374,9 +373,8 @@
                     640
                 ],
                 "template": [
-                    "隐秘圣所/精英buff.png"
+                    "隐秘圣所/精英buff_小.png"
                 ],
-                "count": 8,
                 "index": -1
             }
         },
@@ -681,7 +679,8 @@
                 ],
                 "template": [
                     "隐秘圣所/传说buff.png"
-                ]
+                ],
+                "order_by": "Random"
             }
         },
         "action": {
@@ -713,7 +712,8 @@
                 ],
                 "template": [
                     "隐秘圣所/神话buff.png"
-                ]
+                ],
+                "order_by": "Random"
             }
         },
         "action": {
@@ -745,7 +745,8 @@
                 ],
                 "template": [
                     "隐秘圣所/精英buff.png"
-                ]
+                ],
+                "order_by": "Random"
             }
         },
         "action": {

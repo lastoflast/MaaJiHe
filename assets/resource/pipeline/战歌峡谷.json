@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793808640303,
+            "lastSyncTime": 1793888383354,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战歌峡谷.json",
             "savedViewport": {
-                "x": -3340,
-                "y": 64,
+                "x": -4727,
+                "y": -527,
                 "zoom": 0.99
             },
             "filename": "战歌峡谷",
@@ -499,7 +499,7 @@
                 "duration": 400
             }
         },
-        "post_wait_freezes": 3000,
+        "post_delay": 3000,
         "next": [
             "开始寻找空坑"
         ],
