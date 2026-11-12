@@ -1,8 +1,8 @@
 name: Sync JSON Schema Files from MaaFramework
 
 on:
-  schedule:
-    - cron: '10 0 * * 0'  # UTC 00:10 每天运行
+  # schedule:
+    # - cron: '10 0 * * 0'  # UTC 00:10 每周日运行
   
   workflow_dispatch:
 

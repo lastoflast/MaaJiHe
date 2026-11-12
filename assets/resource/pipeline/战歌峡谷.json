@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793888383354,
+            "lastSyncTime": 1794407848657,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\战歌峡谷.json",
             "savedViewport": {
-                "x": -4727,
-                "y": -527,
-                "zoom": 0.99
+                "x": -3711,
+                "y": -765,
+                "zoom": 0.94
             },
             "filename": "战歌峡谷",
-            "version": "v2.1.0"
+            "version": "v2.1.1"
         }
     },
     "$__mpe_external_点击任意关闭_战歌峡谷": {
@@ -170,7 +170,7 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
+        "post_delay": 2000,
         "timeout": 2000,
         "next": [
             "确认收益_进入",

@@ -3,25 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793349259430,
+            "lastSyncTime": 1794457203009,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡试炼之地.json",
             "savedViewport": {
-                "x": -2434,
-                "y": -801,
-                "zoom": 0.99
+                "x": -2297,
+                "y": -372,
+                "zoom": 0.94
             },
             "filename": "扫荡试炼之地",
-            "version": "v2.1.0"
-        }
-    },
-    "$__mpe_external_退出界面_扫荡试炼之地": {
-        "$__mpe_code": {
-            "position": {
-                "x": 3027,
-                "y": 1393
-            }
+            "version": "v2.1.1"
         }
     },
     "$__mpe_external_停止当前任务_扫荡试炼之地": {
@@ -40,11 +32,35 @@
             }
         }
     },
+    "$__mpe_external_准备钻石扫荡_扫荡试炼之地": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4631,
+                "y": 970
+            }
+        }
+    },
     "$__mpe_external_去竞技场_扫荡试炼之地": {
         "$__mpe_code": {
             "position": {
                 "x": 4031,
                 "y": 1450
+            }
+        }
+    },
+    "$__mpe_external_啥也不做_扫荡试炼之地": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4930,
+                "y": 1583
+            }
+        }
+    },
+    "$__mpe_external_退出界面_扫荡试炼之地": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3027,
+                "y": 1393
             }
         }
     },
@@ -93,6 +109,47 @@
             }
         }
     },
+    "已达上限_试炼之地": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "去竞技场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3770,
+                "y": 1451
+            }
+        }
+    },
+    "是否钻石扫荡_试炼之地": {
+        "max_hit": 1,
+        "timeout": 2000,
+        "next": [
+            "[JumpBack]进入废弃矿山_钻石扫荡",
+            "[JumpBack]进入远古战场_钻石扫荡",
+            "[JumpBack]进入神秘森林_钻石扫荡",
+            "[JumpBack]进入月光神殿_钻石扫荡",
+            "[JumpBack]进入宝石矿洞_钻石扫荡",
+            "[JumpBack]退出界面",
+            "停止当前任务"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2760,
+                "y": 1025
+            }
+        }
+    },
     "未达上限_免费扫荡": {
         "recognition": {
             "type": "TemplateMatch",
@@ -114,6 +171,30 @@
             "position": {
                 "x": 4371,
                 "y": 610
+            }
+        }
+    },
+    "未达上限_钻石扫荡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "确定_绿.png"
+                ]
+            }
+        },
+        "inverse": true,
+        "timeout": 1000,
+        "next": [
+            "准备钻石扫荡"
+        ],
+        "on_error": [
+            "啥也不做"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4370,
+                "y": 970
             }
         }
     },
@@ -174,19 +255,19 @@
             }
         }
     },
-    "进入月光神殿": {
+    "进入宝石矿洞_钻石扫荡": {
         "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
                     360,
-                    750,
+                    1000,
                     360,
                     600
                 ],
                 "expected": [
-                    "月光神殿"
+                    "宝石矿洞"
                 ]
             }
         },
@@ -195,48 +276,15 @@
         },
         "timeout": 1000,
         "next": [
-            "未达上限_免费扫荡"
+            "未达上限_钻石扫荡"
         ],
         "on_error": [
             "中继节点_试炼之地"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3810,
-                "y": 611
-            }
-        }
-    },
-    "进入神秘森林": {
-        "max_hit": 2,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    360,
-                    500,
-                    360,
-                    600
-                ],
-                "expected": [
-                    "神秘森林"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 1000,
-        "next": [
-            "未达上限_免费扫荡"
-        ],
-        "on_error": [
-            "中继节点_试炼之地"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3550,
-                "y": 611
+                "x": 4070,
+                "y": 971
             }
         }
     },
@@ -274,6 +322,173 @@
             }
         }
     },
+    "进入废弃矿山_钻石扫荡": {
+        "max_hit": 0,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    0,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "前往"
+                ],
+                "order_by": "Vertical"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "focus": "",
+        "next": [
+            "未达上限_钻石扫荡"
+        ],
+        "on_error": [
+            "中继节点_试炼之地"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3030,
+                "y": 970
+            }
+        }
+    },
+    "进入月光神殿": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    750,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "月光神殿"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "未达上限_免费扫荡"
+        ],
+        "on_error": [
+            "中继节点_试炼之地"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3810,
+                "y": 611
+            }
+        }
+    },
+    "进入月光神殿_钻石扫荡": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    750,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "月光神殿"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "未达上限_钻石扫荡"
+        ],
+        "on_error": [
+            "中继节点_试炼之地"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3810,
+                "y": 970
+            }
+        }
+    },
+    "进入神秘森林": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "神秘森林"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "未达上限_免费扫荡"
+        ],
+        "on_error": [
+            "中继节点_试炼之地"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3550,
+                "y": 611
+            }
+        }
+    },
+    "进入神秘森林_钻石扫荡": {
+        "max_hit": 0,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    360,
+                    500,
+                    360,
+                    600
+                ],
+                "expected": [
+                    "神秘森林"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 1000,
+        "next": [
+            "未达上限_钻石扫荡"
+        ],
+        "on_error": [
+            "中继节点_试炼之地"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3550,
+                "y": 970
+            }
+        }
+    },
     "进入试炼之地": {
         "recognition": {
             "type": "OCR",
@@ -292,6 +507,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "next": [
             "[JumpBack]进入废弃矿山",
             "[JumpBack]进入远古战场",
@@ -342,60 +558,6 @@
             }
         }
     },
-    "进入废弃矿山_钻石扫荡": {
-        "max_hit": 0,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    360,
-                    0,
-                    360,
-                    600
-                ],
-                "expected": [
-                    "前往"
-                ],
-                "order_by": "Vertical"
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 1000,
-        "focus": "",
-        "on_error": [
-            "中继节点_试炼之地"
-        ],
-        "next": [
-            "未达上限_钻石扫荡"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3030,
-                "y": 970
-            }
-        }
-    },
-    "是否钻石扫荡_试炼之地": {
-        "max_hit": 1,
-        "timeout": 2000,
-        "next": [
-            "[JumpBack]进入废弃矿山_钻石扫荡",
-            "[JumpBack]进入远古战场_钻石扫荡",
-            "[JumpBack]进入神秘森林_钻石扫荡",
-            "[JumpBack]进入月光神殿_钻石扫荡",
-            "[JumpBack]进入宝石矿洞_钻石扫荡",
-            "[JumpBack]退出界面",
-            "停止当前任务"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2760,
-                "y": 1025
-            }
-        }
-    },
     "进入远古战场_钻石扫荡": {
         "max_hit": 0,
         "recognition": {
@@ -416,177 +578,16 @@
             "type": "Click"
         },
         "timeout": 1000,
-        "on_error": [
-            "中继节点_试炼之地"
-        ],
         "next": [
             "未达上限_钻石扫荡"
+        ],
+        "on_error": [
+            "中继节点_试炼之地"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 3290,
                 "y": 970
-            }
-        }
-    },
-    "进入神秘森林_钻石扫荡": {
-        "max_hit": 0,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    360,
-                    500,
-                    360,
-                    600
-                ],
-                "expected": [
-                    "神秘森林"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 1000,
-        "on_error": [
-            "中继节点_试炼之地"
-        ],
-        "next": [
-            "未达上限_钻石扫荡"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3550,
-                "y": 970
-            }
-        }
-    },
-    "进入月光神殿_钻石扫荡": {
-        "max_hit": 2,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    360,
-                    750,
-                    360,
-                    600
-                ],
-                "expected": [
-                    "月光神殿"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 1000,
-        "on_error": [
-            "中继节点_试炼之地"
-        ],
-        "next": [
-            "未达上限_钻石扫荡"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3810,
-                "y": 970
-            }
-        }
-    },
-    "进入宝石矿洞_钻石扫荡": {
-        "max_hit": 2,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    360,
-                    1000,
-                    360,
-                    600
-                ],
-                "expected": [
-                    "宝石矿洞"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 1000,
-        "on_error": [
-            "中继节点_试炼之地"
-        ],
-        "next": [
-            "未达上限_钻石扫荡"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4070,
-                "y": 971
-            }
-        }
-    },
-    "$__mpe_external_准备钻石扫荡_扫荡试炼之地": {
-        "$__mpe_code": {
-            "position": {
-                "x": 4631,
-                "y": 970
-            }
-        }
-    },
-    "未达上限_钻石扫荡": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "确定_绿.png"
-                ]
-            }
-        },
-        "inverse": true,
-        "timeout": 1000,
-        "next": [
-            "准备钻石扫荡"
-        ],
-        "on_error": [
-            "啥也不做"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4370,
-                "y": 970
-            }
-        }
-    },
-    "已达上限_试炼之地": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "确定_绿.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "去竞技场"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3770,
-                "y": 1451
-            }
-        }
-    },
-    "$__mpe_external_啥也不做_扫荡试炼之地": {
-        "$__mpe_code": {
-            "position": {
-                "x": 4930,
-                "y": 1583
             }
         }
     }

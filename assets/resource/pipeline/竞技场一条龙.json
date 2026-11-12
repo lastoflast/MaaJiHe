@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793803734512,
+            "lastSyncTime": 1794373112152,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\竞技场一条龙.json",
             "savedViewport": {
-                "x": -2642,
-                "y": -873,
-                "zoom": 2.5
+                "x": -625,
+                "y": 233,
+                "zoom": 0.84
             },
             "filename": "竞技场一条龙",
-            "version": "v2.1.0"
+            "version": "v2.1.1"
         }
     },
     "$__mpe_anchor_挑战竞技场_竞技场一条龙": {
@@ -162,7 +162,7 @@
                     "0竞技券.png"
                 ],
                 "threshold": [
-                    0.9
+                    0.925
                 ]
             }
         },
