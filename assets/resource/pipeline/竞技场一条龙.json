@@ -3,17 +3,44 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1794373112152,
+            "lastSyncTime": 1795241904191,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\竞技场一条龙.json",
             "savedViewport": {
-                "x": -625,
-                "y": 233,
-                "zoom": 0.84
+                "x": -478,
+                "y": -40,
+                "zoom": 1.5
             },
             "filename": "竞技场一条龙",
             "version": "v2.1.1"
+        }
+    },
+    "场内识别券数量_文字": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": "[Anchor]挑战竞技场",
+                "roi_offset": [
+                    12,
+                    30,
+                    -12,
+                    -8
+                ],
+                "expected": [
+                    "^[0OoQ]$"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]检查竞技场宝箱",
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1330,
+                "y": -130
+            }
         }
     },
     "$__mpe_anchor_挑战竞技场_竞技场一条龙": {
@@ -35,8 +62,8 @@
     "$__mpe_external_退出界面_竞技场一条龙": {
         "$__mpe_code": {
             "position": {
-                "x": 1870,
-                "y": 11
+                "x": 1590,
+                "y": 190
             }
         }
     },
@@ -48,7 +75,7 @@
             },
             "extra_positions": [
                 {
-                    "x": 1870,
+                    "x": 1850,
                     "y": -129
                 }
             ]
@@ -135,37 +162,11 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "竞技场_文字.png"
+                    "竞技券_上半.png"
                 ]
             }
         },
         "anchor": "挑战竞技场",
-        "timeout": 250,
-        "next": [
-            "场内识别券数量_图片"
-        ],
-        "on_error": [
-            "挑战竞技场假人"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1062,
-                "y": 292
-            }
-        }
-    },
-    "场内识别券数量_图片": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "0竞技券.png"
-                ],
-                "threshold": [
-                    0.925
-                ]
-            }
-        },
         "timeout": 250,
         "next": [
             "场内识别券数量_文字"
@@ -175,29 +176,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1087,
-                "y": -130
-            }
-        }
-    },
-    "场内识别券数量_文字": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": "场内识别券数量_图片",
-                "expected": [
-                    "0"
-                ]
-            }
-        },
-        "next": [
-            "[JumpBack]检查竞技场宝箱",
-            "退出界面"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1349,
-                "y": -129
+                "x": 1062,
+                "y": 292
             }
         }
     },
@@ -283,8 +263,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1610,
-                "y": -130
+                "x": 1589,
+                "y": -131
             }
         }
     },

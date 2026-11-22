@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793712962330,
+            "lastSyncTime": 1795241244943,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\精灵斗场.json",
             "savedViewport": {
-                "x": -558,
-                "y": 30,
-                "zoom": 0.94
+                "x": 248,
+                "y": 149,
+                "zoom": 0.99
             },
             "filename": "精灵斗场",
-            "version": "v2.1.0"
+            "version": "v2.1.1"
         }
     },
     "$__mpe_external_停止当前任务_精灵斗场": {
@@ -256,13 +256,14 @@
             }
         }
     },
-    "识别相近的风暴战场或巨龙神殿": {
+    "识别下一行稳定活动": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
                     "巨龙神殿.png",
-                    "风暴战场.png"
+                    "风暴战场.png",
+                    "武道会.png"
                 ]
             }
         },
@@ -279,8 +280,13 @@
             }
         },
         "post_delay": 0,
+        "timeout": 2000,
         "next": [
             "进入精灵斗场"
+        ],
+        "on_error": [
+            "退出界面",
+            "啥也不做"
         ],
         "$__mpe_code": {
             "position": {
@@ -303,8 +309,12 @@
             "type": "Click"
         },
         "post_delay": 1000,
+        "timeout": 2000,
         "next": [
             "参加斗蛐蛐"
+        ],
+        "on_error": [
+            "退出界面"
         ],
         "$__mpe_code": {
             "position": {

@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1794283015484,
+            "lastSyncTime": 1795241156540,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\风暴战场.json",
             "savedViewport": {
-                "x": -3023,
-                "y": -282,
+                "x": -3098,
+                "y": -432,
                 "zoom": 0.99
             },
             "filename": "风暴战场",
@@ -29,6 +29,72 @@
             "position": {
                 "x": 4331,
                 "y": 951
+            }
+        }
+    },
+    "一键上阵_风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "一键上阵.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "保存阵容_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4330,
+                "y": 1030
+            }
+        }
+    },
+    "保存阵容_风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "保存.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "退出界面_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4590,
+                "y": 1030
+            }
+        }
+    },
+    "开始_风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "开始_橙.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "开始匹配_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5110,
+                "y": 1030
             }
         }
     },
@@ -79,8 +145,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3811,
-                "y": 1071
+                "x": 3810,
+                "y": 1031
             }
         }
     },
@@ -144,6 +210,28 @@
             }
         }
     },
+    "设置阵容_风暴战场": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "设置阵容.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "一键上阵_风暴战场"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4070,
+                "y": 1030
+            }
+        }
+    },
     "识别入场券数量": {
         "recognition": {
             "type": "OCR",
@@ -191,8 +279,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3551,
-                "y": 1071
+                "x": 3550,
+                "y": 1031
             }
         }
     },
@@ -215,88 +303,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3548,
-                "y": 686
-            }
-        }
-    },
-    "风暴战场": {
-        "pre_delay": 0,
-        "post_delay": 0,
-        "next": [
-            "进入风暴战场",
-            "识别巨龙神殿"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3277,
-                "y": 967
-            }
-        }
-    },
-    "设置阵容_风暴战场": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "设置阵容.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "一键上阵_风暴战场"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4070,
-                "y": 1030
-            }
-        }
-    },
-    "一键上阵_风暴战场": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "一键上阵.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "保存阵容_风暴战场"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4330,
-                "y": 1030
-            }
-        }
-    },
-    "保存阵容_风暴战场": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "保存.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "退出界面_风暴战场"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4590,
-                "y": 1030
+                "x": 3550,
+                "y": 690
             }
         }
     },
@@ -322,25 +330,69 @@
             }
         }
     },
-    "开始_风暴战场": {
+    "风暴战场": {
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "进入风暴战场",
+            "识别巨龙神殿",
+            "识别武道会"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3277,
+                "y": 967
+            }
+        }
+    },
+    "识别武道会": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "开始_橙.png"
+                    "武道会.png"
                 ]
             }
         },
-        "action": {
-            "type": "Click"
-        },
+        "pre_delay": 0,
+        "post_delay": 0,
         "next": [
-            "开始匹配_风暴战场"
+            "滑动到武道会"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5110,
-                "y": 1030
+                "x": 3550,
+                "y": 1431
+            }
+        }
+    },
+    "滑动到武道会": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "武道会_右.png"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "识别武道会",
+                "duration": [
+                    100
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "识别巨龙神殿"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3810,
+                "y": 1430
             }
         }
     }

@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1794286296893,
+            "lastSyncTime": 1795241976206,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\隐秘圣所.json",
             "savedViewport": {
-                "x": -1895,
-                "y": 58,
-                "zoom": 0.63
+                "x": -4774,
+                "y": -398,
+                "zoom": 1.49
             },
             "filename": "隐秘圣所",
             "version": "v2.1.1"
@@ -630,7 +630,7 @@
                     0,
                     400,
                     360,
-                    600
+                    700
                 ],
                 "expected": [
                     "隐秘圣所"

@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1794457203009,
+            "lastSyncTime": 1794457216432,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\扫荡试炼之地.json",
             "savedViewport": {
-                "x": -2297,
-                "y": -372,
+                "x": -2061,
+                "y": -292,
                 "zoom": 0.94
             },
             "filename": "扫荡试炼之地",
@@ -497,7 +497,7 @@
                     0,
                     0,
                     360,
-                    600
+                    700
                 ],
                 "expected": [
                     "试炼之地"

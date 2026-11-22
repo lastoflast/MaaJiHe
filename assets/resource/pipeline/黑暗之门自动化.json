@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1793089318696,
+            "lastSyncTime": 1795325233938,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "H:\\Maa Projects\\MaaJiHe\\assets\\resource\\pipeline\\黑暗之门自动化.json",
             "savedViewport": {
-                "x": -1447,
-                "y": 30,
-                "zoom": 0.99
+                "x": -1608,
+                "y": -59,
+                "zoom": 0.94
             },
             "filename": "黑暗之门自动化",
-            "version": "v2.1.0"
+            "version": "v2.1.1"
         }
     },
     "$__mpe_external_关闭弹窗_黑暗之门自动化": {
@@ -40,18 +40,6 @@
             }
         }
     },
-    "$__mpe_sticker_便签_黑暗之门自动化": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2705,
-                "y": 163
-            },
-            "content": "该多少阈值合适？",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
     "一键上阵_黑暗之门": {
         "recognition": {
             "type": "TemplateMatch",
@@ -74,6 +62,36 @@
             }
         }
     },
+    "中继节点_黑暗之门": {
+        "timeout": 2000,
+        "next": [
+            "点击任意关闭_黑暗之门"
+        ],
+        "on_error": [
+            "已误点空白处关闭"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2960,
+                "y": 689
+            }
+        }
+    },
+    "已误点空白处关闭": {
+        "timeout": 2000,
+        "next": [
+            "默认扫荡"
+        ],
+        "on_error": [
+            "退出界面"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3230,
+                "y": 750
+            }
+        }
+    },
     "延迟1秒": {
         "pre_delay": 500,
         "post_delay": 500,
@@ -82,7 +100,7 @@
             "点技能"
         ],
         "on_error": [
-            "点击任意关闭_黑暗之门"
+            "中继节点_黑暗之门"
         ],
         "$__mpe_code": {
             "position": {
@@ -290,7 +308,7 @@
                     0,
                     600,
                     360,
-                    600
+                    700
                 ],
                 "expected": [
                     "黑暗之门"
