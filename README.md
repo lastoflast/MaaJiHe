@@ -58,10 +58,9 @@
 
 ## 注意事项
 
-- 安卓模拟器端：暂未测试（~~任意模拟器皆可,如果出现部分任务无法完成,请切换1280\*720(240DPI)~~）
 - 桌面端：需要使用管理员权限启动
 - 打开无法运行首先尝试安装运行库 <https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170>
-- 如有其他问题可以提交issue，反馈问题请附上日志文件 `debug/maa.log`，谢谢！
+- 如有其他问题可以提交issue或者加Q群反馈 970784057，反馈问题请附上日志文件 `debug/maa.log`，谢谢！
 
 ## 使用说明
 
